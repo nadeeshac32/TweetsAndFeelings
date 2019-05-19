@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appName</key>
+	<string>Tweets and feelings</string>
+	<key>url</key>
+	<dict>
+		<key>domain</key>
+		<string>http://</string>
+		<key>domainTwitter</key>
+		<string>https://api.twitter.com</string>
+		<key>domainGoogleDocAnalyse</key>
+		<string>https://language.googleapis.com/v1</string>
+	</dict>
+	<key>restClientErrors</key>
+	<dict>
+		<key>localErrors</key>
+		<dict>
+			<key>jsonParseError</key>
+			<dict>
+				<key>code</key>
+				<integer>-1008</integer>
+				<key>message</key>
+				<string>Json Parse Error</string>
+			</dict>
+		</dict>
+		
+		<key>serverErrors</key>
+		<dict>
+			<key>undefinedError</key>
+			<dict>
+				<key>code</key>
+				<integer>-1007</integer>
+				<key>message</key>
+				<string>Error Not Registered</string>
+			</dict>
+		</dict>
+		
+	</dict>
+	<key>apiKeys</key>
+	<dict>
+		<key>twitterAPIKey</key>
+		<string>b2HpZAZW6e5xeZ5hsTtPCxGIH</string>
+		<key>twitterAPISecretKey</key>
+		<string>gAV7dfgUtuZ5jfFREEtpwzWHDitrYfW2OP4APnd8yaW1nXHsLQ</string>
+		<key>twitterBearer</key>
+		<string>AAAAAAAAAAAAAAAAAAAAAPQI%2BgAAAAAAMfA4rQv%2B%2Bl4xoJbZA6TQr8wPe9Y%3DqwiIu0IGTnmiPYsYh62LEWlTSHRVIEXwfBWetm8SjKthImxkNJ</string>
+		<key>googleAPIKey</key>
+		<string>AIzaSyBSrRUau0zpqRWXs1dN8wSYeyRhVSaA4_Y</string>
+	</dict>
+	<key>languages</key>
+	<dict>
+		<key>ch</key>
+		<dict>
+			<key>okBtnTxt</key>
+			<string>OK in chinese</string>
+		</dict>
+		<key>en</key>
+		<dict>
+			<key>networkFailedAlertTitle</key>
+			<string>Can&apos;t connect at the moment</string>
+			<key>networkFailedAlertMsg</key>
+			<string>Check your network connection</string>
+			<key>somethingWentWrongAlertMsg</key>
+			<string>Something went wrong</string>
+			<key>pleaseTryAgainLaterAlertMsg</key>
+			<string>Please try again later</string>
+			<key>pleaseFillTheUsernameAlertMsg</key>
+			<string>Please fill the username you want to look for</string>
+		</dict>
+	</dict>
+	<key>defaultLang</key>
+	<string>en</string>
+	<key>memoryCapacity</key>
+	<integer>500</integer>
+	<key>diskCapacity</key>
+	<integer>500</integer>
+</dict>
+</plist>
