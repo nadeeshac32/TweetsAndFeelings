@@ -40,7 +40,7 @@ class NVActivityIndicatorAnimationPacman: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         let timingFunction = CAMediaTimingFunction(name: .default)
         #else
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+        let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
         #endif
 
         // Stroke start animation
@@ -106,7 +106,7 @@ class NVActivityIndicatorAnimationPacman: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         animation.timingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
         animation.duration = circleDuration
         animation.repeatCount = HUGE

@@ -53,7 +53,7 @@ class NVActivityIndicatorAnimationBallScale: NVActivityIndicatorAnimationDelegat
         #if swift(>=4.2)
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         #else
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         #endif
         animation.duration = duration
         animation.repeatCount = HUGE

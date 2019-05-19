@@ -41,7 +41,7 @@ class NVActivityIndicatorAnimationBallPulseSync: NVActivityIndicatorAnimationDel
         #if swift(>=4.2)
         let timingFunciton = CAMediaTimingFunction(name: .easeInEaseOut)
         #else
-        let timingFunciton = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunciton = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         #endif
 
         // Animation

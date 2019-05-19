@@ -44,7 +44,7 @@ class NVActivityIndicatorAnimationBallZigZag: NVActivityIndicatorAnimationDelega
         #if swift(>=4.2)
         animation.timingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
 
         animation.values = [

@@ -543,7 +543,7 @@ public final class NVActivityIndicatorView: UIView {
         #if swift(>=4.2)
         var animationRect = frame.inset(by: UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
         #else
-        var animationRect = UIEdgeInsetsInsetRect(frame, UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
+        var animationRect = frame.inset(by: UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
         #endif
         let minEdge = min(animationRect.width, animationRect.height)
 

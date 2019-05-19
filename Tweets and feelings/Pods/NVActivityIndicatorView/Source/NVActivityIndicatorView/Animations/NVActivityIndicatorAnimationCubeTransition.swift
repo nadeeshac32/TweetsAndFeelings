@@ -41,7 +41,7 @@ class NVActivityIndicatorAnimationCubeTransition: NVActivityIndicatorAnimationDe
         #if swift(>=4.2)
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         #else
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         #endif
 
         // Scale animation

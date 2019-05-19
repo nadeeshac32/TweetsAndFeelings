@@ -40,7 +40,7 @@ class NVActivityIndicatorAnimationLineSpinFadeLoader: NVActivityIndicatorAnimati
         #if swift(>=4.2)
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         #else
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         #endif
 
         // Animation

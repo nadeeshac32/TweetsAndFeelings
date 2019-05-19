@@ -53,7 +53,7 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         scaleAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        scaleAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
         scaleAnimation.values = [0, 0, 1.3, 2]
         scaleAnimation.duration = duration
@@ -66,7 +66,7 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: .linear), timingFunction]
         #else
-        scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), timingFunction]
+        scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear), timingFunction]
         #endif
         opacityAnimation.values = [0.8, 0.8, 0]
         opacityAnimation.duration = duration
@@ -99,7 +99,7 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         scaleAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        scaleAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
         scaleAnimation.values = [0, 0, 1.3, 2.1]
         scaleAnimation.duration = duration
@@ -112,7 +112,7 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: .linear), timingFunction]
         #else
-        scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), timingFunction]
+        scaleAnimation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear), timingFunction]
         #endif
         opacityAnimation.values = [0.7, 0.7, 0, 0]
         opacityAnimation.duration = duration
@@ -143,7 +143,7 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
         #if swift(>=4.2)
         let standByTimingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        let standByTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        let standByTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
 
         // Scale animation

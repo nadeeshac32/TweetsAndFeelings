@@ -39,7 +39,7 @@ class NVActivityIndicatorAnimationBallTrianglePath: NVActivityIndicatorAnimation
         #if swift(>=4.2)
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         #else
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         #endif
 
         // Animation
@@ -83,7 +83,7 @@ class NVActivityIndicatorAnimationBallTrianglePath: NVActivityIndicatorAnimation
             #if swift(>=4.2)
             let point = NSCoder.cgPoint(for: translateString(rawValue, deltaX: deltaX, deltaY: deltaY))
             #else
-            let point = CGPointFromString(translateString(rawValue, deltaX: deltaX, deltaY: deltaY))
+            let point = NSCoder.cgPoint(for: translateString(rawValue, deltaX: deltaX, deltaY: deltaY))
             #endif
 
             values.add(NSValue(caTransform3D: CATransform3DMakeTranslation(point.x, point.y, 0)))

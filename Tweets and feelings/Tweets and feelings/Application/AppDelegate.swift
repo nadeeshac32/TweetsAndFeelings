@@ -7,14 +7,56 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	
+	let manager                 = NetworkReachabilityManager(host: "www.apple.com")
+	let defaults                = UserDefaults.standard
+	var language:NSString?      = "" {
+		didSet { AppConfig.si.setLng(newLanguage: language!) }
+	}
+	
+	func showAlert(title: String! = nil, message: String! = nil, alertAction: UIAlertAction! = nil) {
+		let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		if alertAction != nil {
+			ac.addAction(alertAction)
+		} else {
+			ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+		}
+		
+		if var topController = UIApplication.shared.keyWindow?.rootViewController {
+			while let presentedViewController = topController.presentedViewController {
+				topController = presentedViewController
+			}
+			topController.present(ac, animated: true, completion: nil)
+		}
+	}
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		URLCache.shared = AppConfig.si.urlCache
+		
+		let defaultLang = AppConfig.si.defaultLang
+		let language    = defaults.string(forKey: "language") ?? defaultLang
+		self.language   = language! as NSString
+		
+		manager?.listener = { status in
+			if status == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable {
+				self.showAlert(title: AppConfig.si.networkFailedAlertTitle, message: AppConfig.si.networkFailedAlertMsg, alertAction: nil)
+			} else {
+				if var topController = UIApplication.shared.keyWindow?.rootViewController {
+					while let presentedViewController = topController.presentedViewController {
+						topController = presentedViewController
+					}
+					topController.dismiss(animated: true, completion: nil)
+				}
+			}
+		}
+		manager?.startListening()
+		
 		return true
 	}
 

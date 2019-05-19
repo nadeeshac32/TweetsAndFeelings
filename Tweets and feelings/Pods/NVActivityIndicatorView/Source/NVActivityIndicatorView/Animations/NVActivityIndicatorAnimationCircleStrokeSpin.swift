@@ -39,7 +39,7 @@ class NVActivityIndicatorAnimationCircleStrokeSpin: NVActivityIndicatorAnimation
         #if swift(>=4.2)
         rotationAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         #else
-        rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         #endif
 
         let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -63,7 +63,7 @@ class NVActivityIndicatorAnimationCircleStrokeSpin: NVActivityIndicatorAnimation
         #if swift(>=4.2)
         groupAnimation.fillMode = .forwards
         #else
-        groupAnimation.fillMode = kCAFillModeForwards
+        groupAnimation.fillMode = CAMediaTimingFillMode.forwards
         #endif
 
         let circle = NVActivityIndicatorShape.stroke.layerWith(size: size, color: color)

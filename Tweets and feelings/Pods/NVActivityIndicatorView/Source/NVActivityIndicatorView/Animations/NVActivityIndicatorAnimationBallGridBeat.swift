@@ -40,7 +40,7 @@ class NVActivityIndicatorAnimationBallGridBeat: NVActivityIndicatorAnimationDele
         #if swift(>=4.2)
         let timingFunction = CAMediaTimingFunction(name: .default)
         #else
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+        let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
         #endif
 
         // Animation
