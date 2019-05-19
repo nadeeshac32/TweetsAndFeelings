@@ -150,18 +150,8 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
 	let colorPrimary                            = UIColor(hexString: "2878B2")
 	
 	//MARK: - RestClientError constants
-	var restClientErrors: NSDictionary! {
-		guard let dict = getValue(key: "restClientErrors") else { return [:] }
-		return (dict as! NSDictionary)
-	}
-	
 	var localErrors: NSDictionary! {
-		guard let dict = restClientErrors["localErrors"] else { return [:] }
-		return (dict as! NSDictionary)
-	}
-	
-	var serverErrors: NSDictionary! {
-		guard let dict = restClientErrors["serverErrors"] else { return [:] }
+		guard let dict = getValue(key: "localErrors") else { return [:] }
 		return (dict as! NSDictionary)
 	}
 	
@@ -171,7 +161,7 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
 	}
 	
 	var undefinedError: (code: Int, msg: String) {
-		let dict    = serverErrors["undefinedError"] as! NSDictionary
+		let dict    = localErrors["undefinedError"] as! NSDictionary
 		return (dict["code"] as! Int ,msg: dict["message"] as! String)
 	}
 	

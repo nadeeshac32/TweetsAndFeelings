@@ -18,6 +18,15 @@
 		A6586555228E9B7000D95C90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6586553228E9B7000D95C90 /* LaunchScreen.storyboard */; };
 		A6586560228E9B7000D95C90 /* Tweets_and_feelingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658655F228E9B7000D95C90 /* Tweets_and_feelingsTests.swift */; };
 		A658656B228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */; };
+		A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8B22918018007CAA5D /* RestClientError.swift */; };
+		A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8D229181FB007CAA5D /* HTTPService.swift */; };
+		A6EB8A9022918274007CAA5D /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */; };
+		A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */; };
+		A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */; };
+		A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */; };
+		A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD42291A122007CAA5D /* Tweet.swift */; };
+		A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD62291B256007CAA5D /* TwitterToken.swift */; };
+		A6EB8AD92291B64E007CAA5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD82291B64E007CAA5D /* MainViewController.swift */; };
 		ADE1CFF64FD748995893F9DB /* Pods_Tweets_and_feelings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA6E52E198D344BC6BF6717 /* Pods_Tweets_and_feelings.framework */; };
 		C49DC974E477ED4C259FB771 /* Pods_Tweets_and_feelingsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA613D9C12366C53821DE47 /* Pods_Tweets_and_feelingsTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +69,15 @@
 		A6586566228E9B7000D95C90 /* Tweets and feelingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tweets and feelingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets_and_feelingsUITests.swift; sourceTree = "<group>"; };
 		A658656C228E9B7000D95C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6EB8A8B22918018007CAA5D /* RestClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientError.swift; sourceTree = "<group>"; };
+		A6EB8A8D229181FB007CAA5D /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIProtocol.swift; sourceTree = "<group>"; };
+		A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIProtocol.swift; sourceTree = "<group>"; };
+		A6EB8AD42291A122007CAA5D /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		A6EB8AD62291B256007CAA5D /* TwitterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterToken.swift; sourceTree = "<group>"; };
+		A6EB8AD82291B64E007CAA5D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C419EF2D4EB8E3B20EBD624F /* Pods-Tweets and feelingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelingsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelingsTests/Pods-Tweets and feelingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		C66EB4E19DEC083FBF289AE9 /* Pods-Tweets and feelingsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelingsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelingsUITests/Pods-Tweets and feelingsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA6E52E198D344BC6BF6717 /* Pods_Tweets_and_feelings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweets_and_feelings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +136,7 @@
 		A61B77CA2290260600FF7E2D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */,
 				A61B77DC229163D800FF7E2D /* Extensions.swift */,
 				A61B77D622914F1600FF7E2D /* Plist.swift */,
 			);
@@ -144,6 +163,7 @@
 		A61B77CD2290263500FF7E2D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6EB8AD82291B64E007CAA5D /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				A61B77D12290266C00FF7E2D /* API */,
+				A6EB8A8B22918018007CAA5D /* RestClientError.swift */,
+				A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */,
+				A6EB8A8D229181FB007CAA5D /* HTTPService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -159,6 +182,8 @@
 		A61B77D12290266C00FF7E2D /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */,
+				A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -166,6 +191,7 @@
 		A61B77D22290267E00FF7E2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6EB8AD32291A102007CAA5D /* Twitter */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +273,15 @@
 				A658656C228E9B7000D95C90 /* Info.plist */,
 			);
 			path = "Tweets and feelingsUITests";
+			sourceTree = "<group>";
+		};
+		A6EB8AD32291A102007CAA5D /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				A6EB8AD42291A122007CAA5D /* Tweet.swift */,
+				A6EB8AD62291B256007CAA5D /* TwitterToken.swift */,
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 		F4A4DBC1A4FA2BB52885F221 /* Pods */ = {
@@ -486,9 +521,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61B77DB2291546C00FF7E2D /* AppConfig.swift in Sources */,
+				A6EB8AD92291B64E007CAA5D /* MainViewController.swift in Sources */,
+				A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */,
 				A61B77D722914F1600FF7E2D /* Plist.swift in Sources */,
+				A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */,
+				A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */,
+				A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */,
+				A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */,
+				A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */,
 				A658654B228E9B6E00D95C90 /* AppDelegate.swift in Sources */,
+				A6EB8A9022918274007CAA5D /* HTTPResponse.swift in Sources */,
 				A61B77DD229163D900FF7E2D /* Extensions.swift in Sources */,
+				A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

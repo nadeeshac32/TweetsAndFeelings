@@ -13,31 +13,25 @@
 		<key>domainGoogleDocAnalyse</key>
 		<string>https://language.googleapis.com/v1</string>
 	</dict>
-	<key>restClientErrors</key>
+	
+	<key>localErrors</key>
 	<dict>
-		<key>localErrors</key>
+		<key>jsonParseError</key>
 		<dict>
-			<key>jsonParseError</key>
-			<dict>
-				<key>code</key>
-				<integer>-1008</integer>
-				<key>message</key>
-				<string>Json Parse Error</string>
-			</dict>
+			<key>code</key>
+			<integer>-1008</integer>
+			<key>message</key>
+			<string>Json Parse Error</string>
 		</dict>
-		
-		<key>serverErrors</key>
+		<key>undefinedError</key>
 		<dict>
-			<key>undefinedError</key>
-			<dict>
-				<key>code</key>
-				<integer>-1007</integer>
-				<key>message</key>
-				<string>Error Not Registered</string>
-			</dict>
+			<key>code</key>
+			<integer>-1007</integer>
+			<key>message</key>
+			<string>Error Not Registered</string>
 		</dict>
-		
 	</dict>
+		
 	<key>apiKeys</key>
 	<dict>
 		<key>twitterAPIKey</key>
