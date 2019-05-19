@@ -8,6 +8,7 @@ target 'Tweets and feelings' do
   # Pods for Tweets and feelings
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
+  pod "ImageSlideshow/Alamofire"
   pod 'NVActivityIndicatorView', '~> 4.4.0'
   pod 'Toast-Swift', '~> 3.0.1'
 
