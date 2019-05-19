@@ -271,3 +271,13 @@ extension UINavigationController {
         return .lightContent
     }
 }
+
+extension Dictionary {
+	mutating func update(other: Dictionary?) {
+		if other != nil {
+			for (key,value) in other! {
+				self.updateValue(value, forKey:key)
+			}
+		}
+	}
+}

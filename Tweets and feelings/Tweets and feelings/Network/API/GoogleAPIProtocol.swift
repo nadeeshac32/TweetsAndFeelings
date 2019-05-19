@@ -9,5 +9,5 @@
 import Alamofire
 
 protocol GoogleAPIProtocol {
-	func postAnalyseSentiment(method: HTTPMethod?, apiSecret: String, onSuccess: ((_ twitterToken: TwitterToken) -> Void)?, onError: ErrorCallback?)
+	func postAnalyseSentiment(method: HTTPMethod?, analysingString: String, onSuccess: ((_ googleSentiment: GoogleSentiment) -> Void)?, onError: ErrorCallback?)
 }

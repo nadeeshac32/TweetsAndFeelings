@@ -15,23 +15,39 @@ class MainViewController: UIViewController {
     }
 	
 	@IBAction func buttonTapped(_ sender: Any) {
+//		getBearerTokenRequest()
+		getTweetsForUsernameRequest(username: "RobertDowneyJr")
+	}
+
+	func getBearerTokenRequest() {
 		let httpService = HTTPService()
 		httpService.postGetTweeterBearer(onSuccess: { (token) in
-			print("twitter token type: \(token.token_type)")
-			print("twitter access token: \(token.access_token)")
+			print("Twitter Bearer Token: \(token.toJSON())")
 		}) { (error) in
 			print("Rest Client Error: \(error)")
 		}
-
-//		httpService.getTweetsForUsername(screenName: "RobertDowneyJr", onSuccess: { (tweets) in
-//			for tweet in tweets {
-//				print("Tweet: \(tweet.toJSON())")
-//			}
-//		}) { (error) in
-//			print("Rest Client Error: \(error)")
-//		}
-		
 	}
 	
+	func getTweetsForUsernameRequest(username: String) {
+		let httpService = HTTPService()
+		httpService.getTweetsForUsername(screenName: username, onSuccess: { (tweets) in
+			for tweet in tweets {
+				print("Tweet: \(tweet.toJSON())")
+				self.getSentimentAnylisisForTweetRequest(tweet: tweet)
+			}
+		}) { (error) in
+			print("Rest Client Error: \(error)")
+		}
+	}
+	
+	func getSentimentAnylisisForTweetRequest(tweet: Tweet) {
+		let httpService = HTTPService()
+		httpService.postAnalyseSentiment(analysingString: tweet.text, onSuccess: { (googleSentimentAnylise) in
+			print("Google Sentiment Analyse: \(googleSentimentAnylise.toJSON())")
+		}) { (error) in
+			print("Rest Client Error: \(error)")
+		}
+	}
+		
 
 }

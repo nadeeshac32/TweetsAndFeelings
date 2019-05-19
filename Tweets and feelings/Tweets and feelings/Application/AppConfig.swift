@@ -147,7 +147,7 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
 	let screenSize                  : CGRect    = UIScreen.main.bounds
 	
 	//MARK: - Colors
-	let colorPrimary                            = UIColor(hexString: "2878B2")
+	let colorPrimary                            = UIColor(hexString: "1da1f2")
 	
 	//MARK: - RestClientError constants
 	var localErrors: NSDictionary! {

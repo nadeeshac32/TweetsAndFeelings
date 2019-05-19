@@ -18,18 +18,23 @@ class HTTPService: NSObject {
 		self.baseUrl                            = baseUrl
 		parameters                              = [:]
 		headers                                 = [
-			"Content-Type"                      : "application/json",
-			"Accept"							: "*/*"
+			"Content-Type"                      : "application/json"
 		]
 	}
 	
-	func genericRequest(method: HTTPMethod, parameters: [String: AnyObject]?, contextPath: String, onError: ErrorCallback? = nil, completionHandler: @escaping (JSON?, [[String: Any]]?) -> Void) {
+	func genericRequest<T: BaseMappable>(method: HTTPMethod, parameters: [String: AnyObject]?, contextPath: String, responseType: T.Type, onError: ErrorCallback? = nil, completionHandler: @escaping (T?, [T]?) -> Void) {
 		let urlString                           = "\(self.baseUrl!)/\(contextPath)"
 		self.parameters?.update(other: parameters)
 		
-		let request = Alamofire.request(urlString, method: method, parameters: self.parameters!, encoding: JSONEncoding.default, headers: self.headers!)
+		let request: DataRequest!
 		
-			request.responseJSON { response in
+		if method == .get {
+			request = Alamofire.request(urlString, method: method, encoding: JSONEncoding.default, headers: self.headers!)
+		} else {
+			request = Alamofire.request(urlString, method: method, parameters: self.parameters!, encoding: JSONEncoding.default, headers: self.headers!)
+		}
+		
+		request.responseJSON { response in
 			
 			var exception                       : RestClientError?
 			var result                          : JSON?
@@ -47,6 +52,7 @@ class HTTPService: NSObject {
 							} else {
 								let jsonResult: JSON    = try JSON(data: data)
 								result 					= jsonResult
+								print("result?.rawString() : \(result?.rawString())")
 							}
 						} else {
 							let jsonResult: JSON    	= try JSON(data: data)
@@ -59,6 +65,7 @@ class HTTPService: NSObject {
 					exception                   = RestClientError.JsonParseError(errorMessage: AppConfig.si.jsonParseError.msg)
 				}
 			}
+			
 			if let error = exception {
 				print("")
 				print("request      : \(request.debugDescription)")
@@ -70,31 +77,25 @@ class HTTPService: NSObject {
 				onError?(error)
 				return
 			}
+			print("result?.rawString() : \(result?.rawString())")
 			
-			if let jsonString = result {
-				completionHandler(jsonString, nil)
+			if let jsonString = result?.rawString() {
+				if let responseObject = Mapper<T>().map(JSONString: jsonString) {
+					completionHandler(responseObject, nil)
+					return
+				}
+			} else if let jsonArray = resultArray {
+				let itemsArray = Mapper<T>().mapArray(JSONArray: jsonArray)
+				completionHandler(nil, itemsArray)
 				return
-			}
-			
-			if let jsonArray = resultArray {
-				completionHandler(nil, jsonArray)
+			} else {
+				let exception                   = RestClientError.JsonParseError(errorMessage: AppConfig.si.jsonParseError.msg)
+				onError?(exception)
 				return
 			}
 		}
 	}
 }
-
-
-extension Dictionary {
-	mutating func update(other: Dictionary?) {
-		if other != nil {
-			for (key,value) in other! {
-				self.updateValue(value, forKey:key)
-			}
-		}
-	}
-}
-
 
 extension HTTPService: TwitterAPIProtocol {
 	func postGetTweeterBearer(method: HTTPMethod? = .post, onSuccess: ((TwitterToken) -> Void)?, onError: ErrorCallback?) {
@@ -105,13 +106,9 @@ extension HTTPService: TwitterAPIProtocol {
 		let basicAuthenticationBase64			= basicAuthentication!.base64EncodedString(options: [])
 		self.headers?["Authorization"]    		= "Basic \(String(describing: basicAuthenticationBase64))"
 		
-		genericRequest(method: method!, parameters: nil, contextPath: contextPath, onError: onError, completionHandler: { (responseJson, responseJsonDictArray) in
-			if let jsonString = responseJson?.rawString(), let twitterToken = Mapper<TwitterToken>().map(JSONString: jsonString) {
+		genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: TwitterToken.self, onError: onError, completionHandler: { (twitterToken, _) in
+			if let twitterToken = twitterToken {
 				onSuccess?(twitterToken)
-				return
-			} else {
-				let exception                   = RestClientError.JsonParseError(errorMessage: AppConfig.si.jsonParseError.msg)
-				onError?(exception)
 				return
 			}
 		})
@@ -119,17 +116,37 @@ extension HTTPService: TwitterAPIProtocol {
 	
 	func getTweetsForUsername(method: HTTPMethod? = .get, screenName: String, onSuccess: ((_ tweets: [Tweet]) -> Void)?, onError: ErrorCallback?) {
 		self.baseUrl                            = AppConfig.si.baseUrlTwitter
-		let contextPath                         = "1.1/statuses/user_timeline.json?screen_name=\(screenName)&count=2"
+		let contextPath                         = "1.1/statuses/user_timeline.json?screen_name=\(screenName)&count=1"
 		self.headers?["Authorization"]    		= "Bearer \(String(describing: AppConfig.si.twitterBearer!))"
 		
-		genericRequest(method: method!, parameters: nil, contextPath: contextPath, onError: onError, completionHandler: { (responseJsonString, responseJsonDictArray) in
-			if let jsonDictArray = responseJsonDictArray {
-				let itemsArray = Mapper<Tweet>().mapArray(JSONArray: jsonDictArray)
-				onSuccess?(itemsArray)
+		genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: Tweet.self, onError: onError, completionHandler: { (_, tweets) in
+			if let tweets = tweets {
+				onSuccess?(tweets)
 				return
-			} else {
-				let exception                   = RestClientError.JsonParseError(errorMessage: AppConfig.si.jsonParseError.msg)
-				onError?(exception)
+			}
+		})
+	}
+}
+
+extension HTTPService: GoogleAPIProtocol {
+	func postAnalyseSentiment(method: HTTPMethod? = .post, analysingString: String, onSuccess: ((GoogleSentiment) -> Void)?, onError: ErrorCallback?) {
+		self.baseUrl                            = AppConfig.si.baseUrlGoogleDocAnalyse
+		let contextPath                         = "documents:analyzeSentiment?key=\(AppConfig.si.googleAPIKey!)"
+		
+		let document  		: [String : AnyObject]  = [
+			"type"     		: "PLAIN_TEXT" as AnyObject,
+			"language" 		: "en" as AnyObject,
+			"content" 		: "\(analysingString)" as AnyObject
+		]
+		
+		let parameters    	: [String : AnyObject]  = [
+			"document"     	: "\(document)" as AnyObject,
+			"encodingType" 	: "UTF8" as AnyObject
+		]
+		
+		genericRequest(method: method!, parameters: parameters, contextPath: contextPath, responseType: GoogleSentiment.self, onError: onError, completionHandler: { (googleSentiment, _) in
+			if let googleSentiment = googleSentiment {
+				onSuccess?(googleSentiment)
 				return
 			}
 		})

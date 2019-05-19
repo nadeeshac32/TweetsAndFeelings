@@ -12,6 +12,10 @@
 		A61B77D92291500800FF7E2D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A61B77D82291500800FF7E2D /* Configuration.plist */; };
 		A61B77DB2291546C00FF7E2D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B77DA2291546C00FF7E2D /* AppConfig.swift */; };
 		A61B77DD229163D900FF7E2D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B77DC229163D800FF7E2D /* Extensions.swift */; };
+		A6244F712291F86B00849FFD /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6244F702291F86B00849FFD /* Sentiment.swift */; };
+		A6244F732291F88F00849FFD /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6244F722291F88F00849FFD /* Text.swift */; };
+		A6244F752291F8C100849FFD /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6244F742291F8C100849FFD /* Sentence.swift */; };
+		A6244F772291F8F700849FFD /* GoogleSentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6244F762291F8F700849FFD /* GoogleSentiment.swift */; };
 		A658654B228E9B6E00D95C90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658654A228E9B6E00D95C90 /* AppDelegate.swift */; };
 		A6586550228E9B6E00D95C90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A658654E228E9B6E00D95C90 /* Main.storyboard */; };
 		A6586552228E9B7000D95C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6586551228E9B7000D95C90 /* Assets.xcassets */; };
@@ -20,7 +24,6 @@
 		A658656B228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */; };
 		A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8B22918018007CAA5D /* RestClientError.swift */; };
 		A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8D229181FB007CAA5D /* HTTPService.swift */; };
-		A6EB8A9022918274007CAA5D /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */; };
 		A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */; };
 		A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */; };
 		A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */; };
@@ -57,6 +60,10 @@
 		A61B77D82291500800FF7E2D /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		A61B77DA2291546C00FF7E2D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A61B77DC229163D800FF7E2D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A6244F702291F86B00849FFD /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
+		A6244F722291F88F00849FFD /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		A6244F742291F8C100849FFD /* Sentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
+		A6244F762291F8F700849FFD /* GoogleSentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSentiment.swift; sourceTree = "<group>"; };
 		A6586547228E9B6E00D95C90 /* Tweets and feelings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tweets and feelings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A658654A228E9B6E00D95C90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A658654F228E9B6E00D95C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,7 +78,6 @@
 		A658656C228E9B7000D95C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EB8A8B22918018007CAA5D /* RestClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientError.swift; sourceTree = "<group>"; };
 		A6EB8A8D229181FB007CAA5D /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
-		A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIProtocol.swift; sourceTree = "<group>"; };
 		A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIProtocol.swift; sourceTree = "<group>"; };
@@ -173,7 +179,6 @@
 			children = (
 				A61B77D12290266C00FF7E2D /* API */,
 				A6EB8A8B22918018007CAA5D /* RestClientError.swift */,
-				A6EB8A8F22918274007CAA5D /* HTTPResponse.swift */,
 				A6EB8A8D229181FB007CAA5D /* HTTPService.swift */,
 			);
 			path = Network;
@@ -191,6 +196,7 @@
 		A61B77D22290267E00FF7E2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6244F6F2291F82200849FFD /* GoogleSentiment */,
 				A6EB8AD32291A102007CAA5D /* Twitter */,
 			);
 			path = Models;
@@ -219,6 +225,17 @@
 				A6586556228E9B7000D95C90 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A6244F6F2291F82200849FFD /* GoogleSentiment */ = {
+			isa = PBXGroup;
+			children = (
+				A6244F762291F8F700849FFD /* GoogleSentiment.swift */,
+				A6244F742291F8C100849FFD /* Sentence.swift */,
+				A6244F702291F86B00849FFD /* Sentiment.swift */,
+				A6244F722291F88F00849FFD /* Text.swift */,
+			);
+			path = GoogleSentiment;
 			sourceTree = "<group>";
 		};
 		A658653E228E9B6E00D95C90 = {
@@ -522,15 +539,18 @@
 			files = (
 				A61B77DB2291546C00FF7E2D /* AppConfig.swift in Sources */,
 				A6EB8AD92291B64E007CAA5D /* MainViewController.swift in Sources */,
+				A6244F712291F86B00849FFD /* Sentiment.swift in Sources */,
 				A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */,
+				A6244F772291F8F700849FFD /* GoogleSentiment.swift in Sources */,
 				A61B77D722914F1600FF7E2D /* Plist.swift in Sources */,
 				A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */,
 				A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */,
+				A6244F752291F8C100849FFD /* Sentence.swift in Sources */,
 				A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */,
 				A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */,
 				A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */,
+				A6244F732291F88F00849FFD /* Text.swift in Sources */,
 				A658654B228E9B6E00D95C90 /* AppDelegate.swift in Sources */,
-				A6EB8A9022918274007CAA5D /* HTTPResponse.swift in Sources */,
 				A61B77DD229163D900FF7E2D /* Extensions.swift in Sources */,
 				A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */,
 			);
