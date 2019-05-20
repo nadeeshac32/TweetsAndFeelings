@@ -47,7 +47,7 @@ class MainViewController: ExpandingViewController {
 		addGesture(to: collectionView!)
 		
 		self.collectionView?.dataSource = self.twitterTimelinedataSource
-		
+
 		self.twitterTimelinedataSource.data.addAndNotify(observer: self) { [weak self] in
 			self?.twitterTimelinedataSource.cellsIsOpen = Array(repeating: false, count: self?.twitterTimelinedataSource.data.value.count ?? 0)
 			self?.collectionView?.reloadData()
@@ -61,19 +61,23 @@ class MainViewController: ExpandingViewController {
 	}
 	
 	fileprivate func addGesture(to view: UIView) {
-		let upGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
-			$0.direction = .up
+		let upGesture 		= Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
+			$0.direction 	= .up
 		}
 		
-		let downGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
-			$0.direction = .down
+		let downGesture 	= Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
+			$0.direction 	= .down
 		}
+		
+		let tapGesture 		= Init(UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapHandler(_:))), block: nil)
+		
 		view.addGestureRecognizer(upGesture)
 		view.addGestureRecognizer(downGesture)
+		view.addGestureRecognizer(tapGesture)
 	}
 	
-	internal func Init<Type>(_ value: Type, block: (_ object: Type) -> Void) -> Type {
-		block(value)
+	internal func Init<Type>(_ value: Type, block: ((_ object: Type) -> Void)?) -> Type {
+		block?(value)
 		return value
 	}
 	
@@ -81,84 +85,16 @@ class MainViewController: ExpandingViewController {
 		self.viewModel.swiped(direction: sender.direction, visibleCellIndex: self.currentIndex)
 	}
 	
+	@objc func tapHandler(_ sender: UITapGestureRecognizer) {
+		self.viewModel.tapped(visibleCellIndex: self.currentIndex)
+	}
+	
 	func scrollViewDidScroll(_: UIScrollView) {
 		self.viewModel.viewScrolled(visibleCellIndex: self.currentIndex)
 	}
 	
 	@IBAction func searchBtnTapped(_ sender: UIButton) {
-		if let screenNameString = searchTxtFld.text {
-			let trimmed = screenNameString.trimmingCharacters(in: CharacterSet.whitespaces)
-			if !trimmed.isEqual("") {
-				self.viewModel.searchWithUsername(username: trimmed)
-			}
-		}
+		self.viewModel.searchWithUsername(username: searchTxtFld.text)
 	}
 	
-}
-
-
-// MARK: UICollectionViewDataSource
-//extension MainViewController {
-//
-//	override func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-//		return items.count
-//	}
-//
-//	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//		return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TweetCollectionViewCell.self), for: indexPath)
-//	}
-//
-//	override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//		super.collectionView(collectionView, willDisplay: cell, forItemAt: indexPath)
-//		guard let cell = cell as? TweetCollectionViewCell else { return }
-//
-//		let index = indexPath.row % items.count
-//		let tweet = items[index]
-//		cell.userNameLbl.text = tweet.user?.name
-//		cell.userScreenNameLbl.text = "@\(tweet.user?.screen_name ?? "")"
-//		cell.tweetContentLbl.text 	= tweet.text
-//		cell.cellIsOpen(cellsIsOpen[index], animated: false)
-//	}
-//
-//	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//		guard let cell = collectionView.cellForItem(at: indexPath) as? TweetCollectionViewCell
-//			, currentIndex == indexPath.row else { return }
-//
-//		if cell.isOpened == false {
-//			cell.cellIsOpen(true)
-//		} else {
-//			cell.cellIsOpen(false)
-//		}
-//	}
-//}
-
-
-extension MainViewController {
-	func getBearerTokenRequest() {
-		let httpService = HTTPService()
-		httpService.postTweeterBearer(onSuccess: { (token) in
-			print("Twitter Bearer Token: \(token.toJSON())")
-		}) { (error) in
-			print("Rest Client Error: \(error)")
-		}
-	}
-	
-//	func getTweetsForUsernameRequest(username: String) {
-//		let httpService = HTTPService()
-//		httpService.getTweetsForUsername(screenName: username, onSuccess: { (tweets) in
-//			self.items = tweets
-//			self.fillCellIsOpenArray()
-//		}) { (error) in
-//			print("Rest Client Error: \(error)")
-//		}
-//	}
-	
-	func getSentimentAnylisisForTweetRequest(tweet: Tweet) {
-		let httpService = HTTPService()
-		httpService.postAnalyseSentiment(analysingString: tweet.text, onSuccess: { (googleSentimentAnylise) in
-			print("Google Sentiment Analyse: \(googleSentimentAnylise.toJSON())")
-		}) { (error) in
-			print("Rest Client Error: \(error)")
-		}
-	}
 }

@@ -22,6 +22,7 @@ class TwitterTimeLineDataSource : GenericDataSource<Tweet>, UICollectionViewData
 		guard let cell 				= cellObj as? TweetCollectionViewCell else { return UICollectionViewCell() }
 		let index 					= indexPath.row % data.value.count
 		let tweet 					= data.value[index]
+		cell.userImageVw.setImageWith(imagePath: tweet.user?.profile_background_image_url ?? "")
 		cell.userNameLbl.text 		= tweet.user?.name
 		cell.userScreenNameLbl.text = "@\(tweet.user?.screen_name ?? "")"
 		cell.tweetContentLbl.text 	= tweet.text
@@ -29,50 +30,4 @@ class TwitterTimeLineDataSource : GenericDataSource<Tweet>, UICollectionViewData
 		
 		return cell
 	}
-	
-	
-	
-//	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//		super.collectionView(collectionView, willDisplay: cell, forItemAt: indexPath)
-//		guard let cell = cell as? TweetCollectionViewCell else { return }
-//
-//		let index = indexPath.row % data.value.count
-//		let tweet = data.value[index]
-//		cell.userNameLbl.text = tweet.user?.name
-//		cell.userScreenNameLbl.text = "@\(tweet.user?.screen_name ?? "")"
-//		cell.tweetContentLbl.text 	= tweet.text
-//		cell.cellIsOpen(cellsIsOpen[index], animated: false)
-//	}
-	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("didSelectItemAt indexPath: IndexPath : \(indexPath.row)")
-		guard let cell = collectionView.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }	//	, self.currentIndex == indexPath.row
-		if cell.isOpened == false {
-			cell.cellIsOpen(true)
-		} else {
-			cell.cellIsOpen(false)
-		}
-	}
-	
-	
-	
-	
-	
-//	func numberOfSections(in tableView: UITableView) -> Int {
-//		return 1
-//	}
-//
-//	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//		return data.value.count
-//	}
-//
-//	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//		let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
-//
-//		let currencyRate = self.data.value[indexPath.row]
-//		cell.currencyRate = currencyRate
-//
-//		return cell
-//	}
 }

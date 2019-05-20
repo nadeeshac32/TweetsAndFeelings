@@ -18,6 +18,6 @@ class TweeterUser: NSObject, Mappable {
 	func mapping(map: Map) {
 		name 							<- map["name"]
 		screen_name 					<- map["screen_name"]
-		profile_background_image_url 	<- map["profile_background_image_url"]
+		profile_background_image_url 	<- map["profile_image_url_https"]
 	}
 }

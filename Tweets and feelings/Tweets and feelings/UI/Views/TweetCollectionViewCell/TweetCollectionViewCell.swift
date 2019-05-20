@@ -27,9 +27,9 @@ class TweetCollectionViewCell: BasePageCollectionCell {
 		userNameLbl.text 			= ""
 		userScreenNameLbl.text 		= ""
 		tweetContentLbl.text 		= ""
-//		sentimentAnalyseLbl.text 	= ""
-//		scoreLbl.text 				= ""
-//		magnitudeLbl.text 			= ""
+		sentimentAnalyseLbl.text 	= ""
+		scoreLbl.text 				= ""
+		magnitudeLbl.text 			= ""
 		userImageVw.addBoarder(width: 3, cornerRadius: userImageVw.frame.size.width / 2, color: .white)
     }
 
