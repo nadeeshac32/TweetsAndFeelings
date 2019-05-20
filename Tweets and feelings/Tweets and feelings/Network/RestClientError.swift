@@ -25,21 +25,20 @@ public enum RestClientError: Error {
 
 
 extension RestClientError {
-	init(jsonResult: JSON?) {
-		if let googleErrorCode   	= jsonResult?["error"]["code"].intValue,
-			let googleErrorMessage	= jsonResult?["error"]["message"].stringValue,
+	init(jsonResult: Dictionary<String, Any>?) {
+		if let googleErrorCode   	= (jsonResult?["error"] as? Dictionary<String, Any>)?["code"] as? Int,
+			let googleErrorMessage	= (jsonResult?["error"] as? Dictionary<String, Any>)?["message"] as? String,
 			googleErrorMessage != "" {
 
 			self    				= .GoogleError(errorCode: googleErrorCode, errorMessage: googleErrorMessage)
-		} else if let twitterErrorArray   = jsonResult?["errors"].arrayValue,
+		} else if let twitterErrorArray   = jsonResult?["errors"] as? [Dictionary<String, Any>],
 			twitterErrorArray.count > 0,
-			let errorCode 			= twitterErrorArray[0]["code"].int,
-			let message         	= twitterErrorArray[0]["message"].string,
+			let errorCode 			= twitterErrorArray[0]["code"] as? Int,
+			let message         	= twitterErrorArray[0]["message"] as? String,
 			message != ""  {
 			
 			self    				= .TwitterError(errorCode: errorCode, errorMessage: message)
 		} else {
-			
 			self                	= .UndefinedError()
 		}
 	}

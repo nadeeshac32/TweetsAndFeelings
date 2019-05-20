@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
 
 	func getBearerTokenRequest() {
 		let httpService = HTTPService()
-		httpService.postGetTweeterBearer(onSuccess: { (token) in
+		httpService.postTweeterBearer(onSuccess: { (token) in
 			print("Twitter Bearer Token: \(token.toJSON())")
 		}) { (error) in
 			print("Rest Client Error: \(error)")

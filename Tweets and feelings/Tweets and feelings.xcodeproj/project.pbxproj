@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BFF7E18FE6F74B88CA4D03A /* Pods_Tweets_and_feelingsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2621A8EB4FE03FA2DD1B586F /* Pods_Tweets_and_feelingsUITests.framework */; };
+		A617ADCB229278E700B460BE /* HTTPServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617ADCA229278E700B460BE /* HTTPServiceTest.swift */; };
 		A61B77D722914F1600FF7E2D /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B77D622914F1600FF7E2D /* Plist.swift */; };
 		A61B77D92291500800FF7E2D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A61B77D82291500800FF7E2D /* Configuration.plist */; };
 		A61B77DB2291546C00FF7E2D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B77DA2291546C00FF7E2D /* AppConfig.swift */; };
@@ -24,7 +25,6 @@
 		A658656B228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */; };
 		A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8B22918018007CAA5D /* RestClientError.swift */; };
 		A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8A8D229181FB007CAA5D /* HTTPService.swift */; };
-		A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */; };
 		A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */; };
 		A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */; };
 		A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB8AD42291A122007CAA5D /* Tweet.swift */; };
@@ -56,6 +56,7 @@
 		2DA613D9C12366C53821DE47 /* Pods_Tweets_and_feelingsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweets_and_feelingsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B7E8F335E9B74021F16F05 /* Pods-Tweets and feelingsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelingsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelingsUITests/Pods-Tweets and feelingsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		79485A772DF0527C0D73AE3D /* Pods-Tweets and feelings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelings/Pods-Tweets and feelings.release.xcconfig"; sourceTree = "<group>"; };
+		A617ADCA229278E700B460BE /* HTTPServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceTest.swift; sourceTree = "<group>"; };
 		A61B77D622914F1600FF7E2D /* Plist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		A61B77D82291500800FF7E2D /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		A61B77DA2291546C00FF7E2D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		A658656C228E9B7000D95C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EB8A8B22918018007CAA5D /* RestClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientError.swift; sourceTree = "<group>"; };
 		A6EB8A8D229181FB007CAA5D /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
-		A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A6EB8ACF22919435007CAA5D /* TwitterAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIProtocol.swift; sourceTree = "<group>"; };
 		A6EB8AD122919446007CAA5D /* GoogleAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIProtocol.swift; sourceTree = "<group>"; };
 		A6EB8AD42291A122007CAA5D /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 		A61B77CA2290260600FF7E2D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A6EB8ACD2291857E007CAA5D /* SwiftyJSON.swift */,
 				A61B77DC229163D800FF7E2D /* Extensions.swift */,
 				A61B77D622914F1600FF7E2D /* Plist.swift */,
 			);
@@ -279,6 +278,7 @@
 			children = (
 				A658655F228E9B7000D95C90 /* Tweets_and_feelingsTests.swift */,
 				A6586561228E9B7000D95C90 /* Info.plist */,
+				A617ADCA229278E700B460BE /* HTTPServiceTest.swift */,
 			);
 			path = "Tweets and feelingsTests";
 			sourceTree = "<group>";
@@ -544,7 +544,6 @@
 				A6244F772291F8F700849FFD /* GoogleSentiment.swift in Sources */,
 				A61B77D722914F1600FF7E2D /* Plist.swift in Sources */,
 				A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */,
-				A6EB8ACE2291857E007CAA5D /* SwiftyJSON.swift in Sources */,
 				A6244F752291F8C100849FFD /* Sentence.swift in Sources */,
 				A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */,
 				A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */,
@@ -561,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6586560228E9B7000D95C90 /* Tweets_and_feelingsTests.swift in Sources */,
+				A617ADCB229278E700B460BE /* HTTPServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

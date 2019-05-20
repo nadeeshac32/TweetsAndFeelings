@@ -9,7 +9,7 @@
 import Alamofire
 
 protocol TwitterAPIProtocol {
-	func postGetTweeterBearer(method: HTTPMethod?, onSuccess: ((_ twitterToken: TwitterToken) -> Void)?, onError: ErrorCallback?)
+	func postTweeterBearer(method: HTTPMethod?, onSuccess: ((_ twitterToken: TwitterToken) -> Void)?, onError: ErrorCallback?)
 	
 	func getTweetsForUsername(method: HTTPMethod?, screenName: String, onSuccess: ((_ tweets: [Tweet]) -> Void)?, onError: ErrorCallback?)
 }
