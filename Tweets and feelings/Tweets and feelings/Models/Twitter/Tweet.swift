@@ -11,10 +11,12 @@ import ObjectMapper
 
 class Tweet: NSObject, Mappable {
 	var text          	: String = ""
+	var user 			: TweeterUser?
 	
 	required init?(map: Map) { }
 	
 	func mapping(map: Map) {
 		text 			<- map["text"]
+		user 			<- map["user"]
 	}
 }

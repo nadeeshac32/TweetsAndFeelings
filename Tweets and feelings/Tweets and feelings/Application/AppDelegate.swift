@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Toast_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		URLCache.shared = AppConfig.si.urlCache
+		
+		var style                               = ToastStyle()
+		style.messageColor                      = .white
+		style.backgroundColor                   = UIColor.black.withAlphaComponent(0.7)
+		ToastManager.shared.style               = style
+		ToastManager.shared.position            = .center
+		ToastManager.shared.duration            = 4.0
+		ToastManager.shared.isTapToDismissEnabled = true
 		
 		let defaultLang = AppConfig.si.defaultLang
 		let language    = defaults.string(forKey: "language") ?? defaultLang

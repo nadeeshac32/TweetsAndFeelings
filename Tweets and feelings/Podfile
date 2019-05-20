@@ -9,8 +9,9 @@ target 'Tweets and feelings' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod "ImageSlideshow/Alamofire"
-  pod 'NVActivityIndicatorView', '~> 4.4.0'
+  # pod 'NVActivityIndicatorView', '~> 4.4.0'
   pod 'Toast-Swift', '~> 3.0.1'
+  pod 'expanding-collection'
 
   target 'Tweets and feelingsTests' do
     inherit! :search_paths

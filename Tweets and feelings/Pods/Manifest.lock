@@ -5,21 +5,19 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - expanding-collection (3.1.0)
   - ImageSlideshow/Alamofire (1.7.0):
     - AlamofireImage (~> 3.0)
     - ImageSlideshow/Core
   - ImageSlideshow/Core (1.7.0)
-  - NVActivityIndicatorView (4.4.1):
-    - NVActivityIndicatorView/Presenter (= 4.4.1)
-  - NVActivityIndicatorView/Presenter (4.4.1)
   - ObjectMapper (3.4.2)
   - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
+  - expanding-collection
   - ImageSlideshow/Alamofire
-  - NVActivityIndicatorView (~> 4.4.0)
   - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
@@ -27,8 +25,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
+    - expanding-collection
     - ImageSlideshow
-    - NVActivityIndicatorView
     - ObjectMapper
     - Toast-Swift
 
@@ -36,11 +34,11 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
-  NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: d09a61939f52dfbcb769dffaada34cebd6bdaa5a
+PODFILE CHECKSUM: 47b31988799e14d2d4aff151477d916b39ef159a
 
 COCOAPODS: 1.5.3
