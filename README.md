@@ -2,7 +2,7 @@
 IOS Test - used Twitter and Google Natural Language APIs
 
 ## Requirements:
-- Xcode 10/ 10.1
+- Xcode 10 / 10.1
 - Swift 4.2
 
 ## Used iOS Architecture Pattern
@@ -25,27 +25,27 @@ Tweets-And-Feelings
 │       ├── /Info.plist
 │   ├── /Network/
 │       ├── /API/
-│       	├── /GoogleAPIProtocol.swift
-│       	├── /TwitterAPIProtocol.swift
+│       	  ├── /GoogleAPIProtocol.swift
+│       	  ├── /TwitterAPIProtocol.swift
 │       ├── /HTTPService.swift
 │       ├── /RestClientError.swift
 │   ├── /ViewModel/
 │       ├── /DynamicValue.swift
 │      	├── /GenericDataSource.swift
 │       ├── /Twitter/
-│       	├── /TweetViewModel.swift
-│       	├── /TwitterTimeLineDataSource.swift
-│       	├── /TwitterTimeLineViewModel.swift
+│       	  ├── /TweetViewModel.swift
+│       	  ├── /TwitterTimeLineDataSource.swift
+│       	  ├── /TwitterTimeLineViewModel.swift
 │   ├── /Models/
 │       ├── /GoogleSentiment/
-│       	├── /GoogleSentiment.swift
-│       	├── /Sentence.swift
-│       	├── /Sentiment.swift
-│       	├── /Text.swift
+│       	  ├── /GoogleSentiment.swift
+│       	  ├── /Sentence.swift
+│       	  ├── /Sentiment.swift
+│       	  ├── /Text.swift
 │       ├── /Twitter/
-│       	├── /Tweet.swift
-│       	├── /TweeterUser.swift
-│       	├── /TwitterToken.swift
+│       	  ├── /Tweet.swift
+│       	  ├── /TweeterUser.swift
+│       	  ├── /TwitterToken.swift
 │   ├── /UI/
 │       ├── /StoryBoards/ 
 │           ├── /Main.storyboard
@@ -54,8 +54,8 @@ Tweets-And-Feelings
 │           ├── /MainViewController.swift
 │       ├── /View/ 
 │           ├── /TweetCollectionViewCell/
-│           	├── /TweetCollectionViewCell.swift
-│           	├── /TweetCollectionViewCell.xib
+│           	  ├── /TweetCollectionViewCell.swift
+│           	  ├── /TweetCollectionViewCell.xib
 │   ├── /Utilities/
 │       ├── /Extensions.swift
 │       ├── /Plist.swift
@@ -73,7 +73,7 @@ Name          	            | purpose
 Alamofire                  	| Network library
 AlamofireObjectMapper       | Mapping JSON objects into Swift classes
 Toast-Swift                	| Toast notifications to UIView class
-Expanding-collection	 	| Animated material design UI card peek/pop controller
+Expanding-collection	 	    | Animated material design UI card peek/pop controller
 
 
 
