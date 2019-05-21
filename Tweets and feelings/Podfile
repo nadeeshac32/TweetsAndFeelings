@@ -10,7 +10,6 @@ target 'Tweets and feelings' do
   pod 'AlamofireObjectMapper'
   pod 'Toast-Swift', '~> 3.0.1'
   pod 'expanding-collection'
-  pod 'Emoji-swift'
 
   target 'Tweets and feelingsTests' do
     inherit! :search_paths

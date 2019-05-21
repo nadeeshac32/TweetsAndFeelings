@@ -24,21 +24,21 @@ class Sentiment: NSObject, Mappable {
 		if let score = score {
 			if score > 0.25 {
                 if let magnitude = magnitude, magnitude > 0.4 {
-                    feeling     += "Clearly Positive"
+                    feeling     += "🤩 Clearly Positive"
                 } else {
-                    feeling     += "Positive"
+                    feeling     += "😊 Positive"
                 }
 			} else if score < -0.25 {
                 if let magnitude = magnitude, magnitude > 0.4 {
-                    feeling     += "Clearly Negative"
+                    feeling     += "😞 Clearly Negative"
                 } else {
-                    feeling     += "Negative"
+                    feeling     += "😩 Negative"
                 }
 			} else {
                 if let magnitude = magnitude, magnitude > 0.4 {
-                    feeling     += "Neutral"
+                    feeling     += "😐 Neutral"
                 } else {
-                    feeling     += "Mixed"
+                    feeling     += "😶 Mixed"
                 }
 			}
 		}
