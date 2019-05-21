@@ -31,10 +31,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wan-Ej-yBK">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wan-Ej-yBK">
                                 <rect key="frame" x="37.5" y="73.5" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="T0t-cr-hIB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="T0t-cr-hIB"/>
                                     <constraint firstAttribute="height" constant="40" id="VtX-vg-qLF"/>
                                 </constraints>
                                 <nil key="textColor"/>
