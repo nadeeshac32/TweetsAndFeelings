@@ -21,6 +21,7 @@ struct TwitterTimeLineViewModel {
 	var expandCell: ((_ doOpen: Bool, IndexPath) -> Void)?
 	var showToast: ((_ alertString: String) -> Void)?
 	var pageNumberUpdate: ((_ pageNumber: String) -> Void)?
+	var sentimentAnalised: ((_ sentiment: Sentiment, IndexPath) -> Void)?
 	
 	func swiped(direction: UISwipeGestureRecognizer.Direction, visibleCellIndex: Int) {
 		let open = direction == .up ? true : false
@@ -28,6 +29,7 @@ struct TwitterTimeLineViewModel {
 		if let dataCount = self.dataSource?.data.value.count, visibleCellIndex < dataCount {
 			self.expandCell?(open, indexPath)
 			self.dataSource?.cellsIsOpen[indexPath.row] = open
+			self.getSentimentAnylisisForTweetRequest(analysingString: self.dataSource?.data.value[visibleCellIndex].text ?? "", analisedCellIndex: visibleCellIndex)
 		}
 	}
 	
@@ -38,6 +40,7 @@ struct TwitterTimeLineViewModel {
 			if let dataCount = self.dataSource?.data.value.count, indexPath.row < dataCount {
 				self.expandCell?(open, indexPath)
 				self.dataSource?.cellsIsOpen[visibleCellIndex] = open
+				self.getSentimentAnylisisForTweetRequest(analysingString: self.dataSource?.data.value[visibleCellIndex].text ?? "", analisedCellIndex: visibleCellIndex)
 			}
 		}
 	}
@@ -93,12 +96,17 @@ struct TwitterTimeLineViewModel {
 		}
 	}
 	
-	private func getSentimentAnylisisForTweetRequest(tweet: Tweet) {
+	private func getSentimentAnylisisForTweetRequest(analysingString: String, analisedCellIndex: Int) {
 		let httpService = HTTPService()
-		httpService.postAnalyseSentiment(analysingString: tweet.text, onSuccess: { (googleSentimentAnylise) in
-			print("Google Sentiment Analyse: \(googleSentimentAnylise.toJSON())")
+		httpService.postAnalyseSentiment(analysingString: analysingString, onSuccess: { (googleSentimentAnylise) in
+			if let dataCount = self.dataSource?.data.value.count, dataCount > analisedCellIndex, let sentiment = googleSentimentAnylise.documentSentiment {
+				let indexPath = IndexPath(row: analisedCellIndex, section: 0)
+				self.sentimentAnalised?(sentiment, indexPath)
+			} else {
+				self.showToast?(AppConfig.si.googleSentimentErrorMsg)
+			}
 		}) { (error) in
-			print("Rest Client Error: \(error)")
+			self.showToast?(AppConfig.si.googleSentimentErrorMsg)
 		}
 	}
 	

@@ -12,26 +12,29 @@ import Toast_Swift
 
 class MainViewController: ExpandingViewController {
 	
-	@IBOutlet weak var searchTxtFld: UITextField!
-	@IBOutlet weak var searchBtn: UIButton!
-	@IBOutlet var pageLabel: UILabel!
+	@IBOutlet weak var searchTxtFld	: UITextField!
+	@IBOutlet weak var searchBtn	: UIButton!
+	@IBOutlet var pageLabel			: UILabel!
 	
 	let twitterTimelinedataSource = TwitterTimeLineDataSource()
 	
 	lazy var viewModel : TwitterTimeLineViewModel = {
 		var viewModel = TwitterTimeLineViewModel(dataSource: twitterTimelinedataSource)
 		
-		viewModel.expandCell = { (doOpen: Bool, indexPath: IndexPath) in
-			guard let cell = self.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
+		viewModel.expandCell = { [weak self] (doOpen: Bool, indexPath: IndexPath) in
+			guard let cell = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
 			cell.cellIsOpen(doOpen)
 		}
-		viewModel.showToast = { (alertString: String) in
-			self.view.makeToast(alertString)
+		viewModel.showToast = { [weak self] (alertString: String) in
+			self?.view.makeToast(alertString)
 		}
 		viewModel.pageNumberUpdate = { [weak self] (pageNumber: String) in
 			self?.pageLabel.text = pageNumber
 		}
-		
+		viewModel.sentimentAnalised = { [weak self] (sentiment: Sentiment, indexPath: IndexPath) in
+			guard let cell = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
+			cell.viewModel?.sentiment = sentiment
+		}
 		return viewModel
 	}()
 	

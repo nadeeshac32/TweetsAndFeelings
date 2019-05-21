@@ -13,7 +13,6 @@
 		<key>domainGoogleDocAnalyse</key>
 		<string>https://language.googleapis.com/v1</string>
 	</dict>
-	
 	<key>localErrors</key>
 	<dict>
 		<key>jsonParseError</key>
@@ -31,7 +30,6 @@
 			<string>Error Not Registered</string>
 		</dict>
 	</dict>
-		
 	<key>apiKeys</key>
 	<dict>
 		<key>twitterAPIKey</key>
@@ -62,6 +60,8 @@
 			<string>Please try again later</string>
 			<key>pleaseFillTheUsernameAlertMsg</key>
 			<string>Please fill the username you want to look for</string>
+			<key>googleSentimentErrorMsg</key>
+			<string>Something went wrong while retriving sentiment analyse</string>
 		</dict>
 	</dict>
 	<key>defaultLang</key>

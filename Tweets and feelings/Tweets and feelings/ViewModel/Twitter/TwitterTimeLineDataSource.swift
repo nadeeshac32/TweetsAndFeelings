@@ -22,10 +22,7 @@ class TwitterTimeLineDataSource : GenericDataSource<Tweet>, UICollectionViewData
 		guard let cell 				= cellObj as? TweetCollectionViewCell else { return UICollectionViewCell() }
 		let index 					= indexPath.row % data.value.count
 		let tweet 					= data.value[index]
-		cell.userImageVw.setImageWith(imagePath: tweet.user?.profile_background_image_url ?? "")
-		cell.userNameLbl.text 		= tweet.user?.name
-		cell.userScreenNameLbl.text = "@\(tweet.user?.screen_name ?? "")"
-		cell.tweetContentLbl.text 	= tweet.text
+		cell.viewModel?.tweet 		= tweet
 		cell.cellIsOpen(cellsIsOpen[index], animated: false)
 		
 		return cell

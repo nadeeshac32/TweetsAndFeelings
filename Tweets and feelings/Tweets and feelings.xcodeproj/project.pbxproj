@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BFF7E18FE6F74B88CA4D03A /* Pods_Tweets_and_feelingsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2621A8EB4FE03FA2DD1B586F /* Pods_Tweets_and_feelingsUITests.framework */; };
+		A61569B7229364CF008CCC8D /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61569B6229364CF008CCC8D /* TweetViewModel.swift */; };
 		A617ADCB229278E700B460BE /* HTTPServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617ADCA229278E700B460BE /* HTTPServiceTest.swift */; };
 		A61B77D722914F1600FF7E2D /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B77D622914F1600FF7E2D /* Plist.swift */; };
 		A61B77D92291500800FF7E2D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A61B77D82291500800FF7E2D /* Configuration.plist */; };
@@ -63,6 +64,7 @@
 		2DA613D9C12366C53821DE47 /* Pods_Tweets_and_feelingsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tweets_and_feelingsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B7E8F335E9B74021F16F05 /* Pods-Tweets and feelingsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelingsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelingsUITests/Pods-Tweets and feelingsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		79485A772DF0527C0D73AE3D /* Pods-Tweets and feelings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tweets and feelings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tweets and feelings/Pods-Tweets and feelings.release.xcconfig"; sourceTree = "<group>"; };
+		A61569B6229364CF008CCC8D /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		A617ADCA229278E700B460BE /* HTTPServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceTest.swift; sourceTree = "<group>"; };
 		A61B77D622914F1600FF7E2D /* Plist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		A61B77D82291500800FF7E2D /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				A68E19622292F20A0080730F /* TwitterTimeLineViewModel.swift */,
 				A68E19642292F34E0080730F /* TwitterTimeLineDataSource.swift */,
+				A61569B6229364CF008CCC8D /* TweetViewModel.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				A6244F752291F8C100849FFD /* Sentence.swift in Sources */,
 				A68E19582292B0A60080730F /* TweetCollectionViewCell.swift in Sources */,
 				A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */,
+				A61569B7229364CF008CCC8D /* TweetViewModel.swift in Sources */,
 				A68E195B2292E3770080730F /* TweeterUser.swift in Sources */,
 				A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */,
 				A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */,

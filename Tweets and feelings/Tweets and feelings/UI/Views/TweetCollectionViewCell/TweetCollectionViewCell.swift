@@ -21,6 +21,23 @@ class TweetCollectionViewCell: BasePageCollectionCell {
 	@IBOutlet weak var scoreLbl: UILabel!
 	@IBOutlet weak var magnitudeLbl: UILabel!
 	
+	var viewModel 					: TweetViewModel? {
+		didSet {
+			self.viewModel?.setBasicDetails = { [weak self] (username: String, screenName: String, content: String, userImaeUrl: String) in
+				self?.userNameLbl.text 			= username
+				self?.userScreenNameLbl.text 	= screenName
+				self?.tweetContentLbl.text 		= content
+				self?.userImageVw.setImageWith(imagePath: userImaeUrl)
+			}
+			
+			self.viewModel?.setSentimentDetails = { [weak self] (score: String, magniture: String, feeling: String) in
+				self?.sentimentAnalyseLbl.text 	= feeling
+				self?.scoreLbl.text 			= score
+				self?.magnitudeLbl.text 		= magniture
+			}
+		}
+	}
+	
 	override func awakeFromNib() {
         super.awakeFromNib()
         frontContainerOpasityVw.layer.cornerRadius 	= 5
@@ -31,6 +48,8 @@ class TweetCollectionViewCell: BasePageCollectionCell {
 		scoreLbl.text 				= ""
 		magnitudeLbl.text 			= ""
 		userImageVw.addBoarder(width: 3, cornerRadius: userImageVw.frame.size.width / 2, color: .white)
+		
+		viewModel 					= TweetViewModel()
     }
-
+	
 }

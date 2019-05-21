@@ -128,6 +128,11 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
 		return (string as! String)
 	}
 	
+	var googleSentimentErrorMsg:String! {
+		guard let string = languageStrings["googleSentimentErrorMsg"] else { return "" }
+		return (string as! String)
+	}
+	
 	// MARK: - system variables
 	var memoryCapacity:Int {
 		guard let int = getValue(key: "memoryCapacity") else { return 0 }
