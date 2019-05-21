@@ -10,4 +10,4 @@ Swift 4.2
 > #### Distribution
 > High distribution of responsibilities among Model, View, ViewModel
 > #### Testability
-> ViewModel know nothing about the View. It allows to test easily.
+> ViewModel knows nothing about the View. It allows to test easily.
