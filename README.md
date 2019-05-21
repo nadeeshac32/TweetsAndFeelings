@@ -2,8 +2,8 @@
 IOS Test - used Twitter and Google Natural Language APIs
 
 ## Requirements
-Xcode 10/ 10.1
-Swift 4.2
+> Xcode 10/ 10.1
+> Swift 4.2
 
 ## Used iOS Architecture Pattern
 **MVVM - Model-View-ViewModel**:
