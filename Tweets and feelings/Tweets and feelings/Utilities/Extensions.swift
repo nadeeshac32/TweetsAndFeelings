@@ -281,3 +281,11 @@ extension Dictionary {
 		}
 	}
 }
+
+//let downGesture                 = Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
+//    $0.direction                 = .down
+//}
+//internal func Init<Type>(_ value: Type, block: ((_ object: Type) -> Void)?) -> Type {
+//    block?(value)
+//    return value
+//}

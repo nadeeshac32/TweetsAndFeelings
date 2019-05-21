@@ -12,34 +12,39 @@ import Toast_Swift
 
 class MainViewController: ExpandingViewController {
 	
-	@IBOutlet weak var searchTxtFld	: UITextField!
-	@IBOutlet weak var searchBtn	: UIButton!
-	@IBOutlet var pageLabel			: UILabel!
+	@IBOutlet weak var searchTxtFld	    : UITextField!
+	@IBOutlet weak var searchBtn	    : UIButton!
+	@IBOutlet var pageLabel			    : UILabel!
 	
-	let twitterTimelinedataSource = TwitterTimeLineDataSource()
+	let twitterTimelinedataSource       = TwitterTimeLineDataSource()
 	
-	lazy var viewModel : TwitterTimeLineViewModel = {
-		var viewModel = TwitterTimeLineViewModel(dataSource: twitterTimelinedataSource)
+	lazy var viewModel: TwitterTimeLineViewModel = {
+		var viewModel                   = TwitterTimeLineViewModel(dataSource: twitterTimelinedataSource)
 		
 		viewModel.expandCell = { [weak self] (doOpen: Bool, indexPath: IndexPath) in
-			guard let cell = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
+			guard let cell              = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
 			cell.cellIsOpen(doOpen)
 		}
 		viewModel.showToast = { [weak self] (alertString: String) in
 			self?.view.makeToast(alertString)
 		}
 		viewModel.pageNumberUpdate = { [weak self] (pageNumber: String) in
-			self?.pageLabel.text = pageNumber
+			self?.pageLabel.text        = pageNumber
 		}
 		viewModel.sentimentAnalised = { [weak self] (sentiment: Sentiment, indexPath: IndexPath) in
-			guard let cell = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
-			cell.viewModel?.sentiment = sentiment
+			guard let cell              = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
+			cell.viewModel?.sentiment   = sentiment
 		}
+        viewModel.reloardDataAccordingToDataSource = { [weak self] in
+            self?.collectionView?.reloadData()
+            self?.viewModel.viewScrolled(visibleCellIndex: self?.currentIndex ?? 0)
+        }
+        
 		return viewModel
 	}()
 	
 	override func viewDidLoad() {
-		itemSize = CGSize(width: 240, height: 460)
+		itemSize                        = CGSize(width: 240, height: 460)
 		super.viewDidLoad()
 		
 		view.addGradientWithColors(color1: #colorLiteral(red: 0.7690889239, green: 0.8050159812, blue: 0.8344388008, alpha: 1), color2: AppConfig.si.colorPrimary!, direction: GradientDirection.topToBottom)
@@ -48,40 +53,28 @@ class MainViewController: ExpandingViewController {
 		
 		registerCell()
 		addGesture(to: collectionView!)
-		
-		self.collectionView?.dataSource = self.twitterTimelinedataSource
-
-		self.twitterTimelinedataSource.data.addAndNotify(observer: self) { [weak self] in
-			self?.twitterTimelinedataSource.cellsIsOpen = Array(repeating: false, count: self?.twitterTimelinedataSource.data.value.count ?? 0)
-			self?.collectionView?.reloadData()
-			self?.viewModel.viewScrolled(visibleCellIndex: self?.currentIndex ?? 0)
-		}
+     	
+        self.collectionView?.dataSource = self.twitterTimelinedataSource
     }
-	
+    
+    
 	fileprivate func registerCell() {
-		let nib = UINib(nibName: String(describing: TweetCollectionViewCell.self), bundle: nil)
+		let nib                         = UINib(nibName: String(describing: TweetCollectionViewCell.self), bundle: nil)
 		collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: TweetCollectionViewCell.self))
 	}
 	
 	fileprivate func addGesture(to view: UIView) {
-		let upGesture 		= Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
-			$0.direction 	= .up
-		}
+		let upGesture 	            	= UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))
+        upGesture.direction             = .up
 		
-		let downGesture 	= Init(UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))) {
-			$0.direction 	= .down
-		}
+		let downGesture 	            = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.swipeHandler(_:)))
+        downGesture.direction           = .down
 		
-		let tapGesture 		= Init(UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapHandler(_:))), block: nil)
+		let tapGesture 		            = UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapHandler(_:)))
 		
 		view.addGestureRecognizer(upGesture)
 		view.addGestureRecognizer(downGesture)
 		view.addGestureRecognizer(tapGesture)
-	}
-	
-	internal func Init<Type>(_ value: Type, block: ((_ object: Type) -> Void)?) -> Type {
-		block?(value)
-		return value
 	}
 	
 	@objc func swipeHandler(_ sender: UISwipeGestureRecognizer) {

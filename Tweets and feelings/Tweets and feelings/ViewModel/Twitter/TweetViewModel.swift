@@ -21,8 +21,8 @@ struct TweetViewModel {
 		}
 	}
 	
-	init() { }
+	init() {}
 	
-	var setBasicDetails: ((String, String, String, String) -> Void)? 	// 	username, screenName, tweetContent, userImageUrl
-	var setSentimentDetails: ((String, String, String) -> Void)? 		// 	scoreString, magnitudeString, feeling
+	var setBasicDetails     : ((String, String, String, String) -> Void)? 	// 	username, screenName, tweetContent, userImageUrl
+	var setSentimentDetails : ((String, String, String) -> Void)? 		    // 	scoreString, magnitudeString, feeling
 }

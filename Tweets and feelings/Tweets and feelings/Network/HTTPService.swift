@@ -93,7 +93,7 @@ extension HTTPService: TwitterAPIProtocol {
 	
 	func getTweetsForUsername(method: HTTPMethod? = .get, screenName: String, onSuccess: ((_ tweets: [Tweet]) -> Void)?, onError: ErrorCallback?) {
 		self.baseUrl                                = AppConfig.si.baseUrlTwitter
-		let contextPath                             = "1.1/statuses/user_timeline.json?screen_name=\(screenName)&count=4"
+		let contextPath                             = "1.1/statuses/user_timeline.json?screen_name=\(screenName)&count=10"
 		self.headers?["Authorization"]    		    = "Bearer \(String(describing: AppConfig.si.twitterBearer!))"
 		
 		genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: Tweet.self, onError: onError, completionHandler: { (_, tweets) in

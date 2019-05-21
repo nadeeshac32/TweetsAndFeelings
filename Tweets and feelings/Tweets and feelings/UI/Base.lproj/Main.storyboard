@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jx-IG-az6">
-                                <rect key="frame" x="162.5" y="567" width="50" height="30"/>
+                                <rect key="frame" x="162.5" y="597" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="awt-7r-oqr"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="257.5" y="93.5" width="70" height="40"/>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="HT7-KG-kxM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HT7-KG-kxM"/>
                                 </constraints>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,15 +57,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5jx-IG-az6" secondAttribute="bottom" constant="70" id="38w-64-4hC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5jx-IG-az6" secondAttribute="bottom" constant="40" id="38w-64-4hC"/>
                             <constraint firstItem="WFQ-dn-6Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HGj-Pq-G5F"/>
-                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerX" secondItem="WFQ-dn-6Sh" secondAttribute="centerX" constant="-50" id="Joj-jA-Ras"/>
-                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerY" secondItem="WFQ-dn-6Sh" secondAttribute="centerY" constant="-220" id="RQ1-JZ-801"/>
+                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerX" secondItem="WFQ-dn-6Sh" secondAttribute="centerX" constant="-50" id="Mu7-GI-fyQ"/>
+                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerY" secondItem="WFQ-dn-6Sh" secondAttribute="centerY" priority="999" constant="-220" id="RQ1-JZ-801"/>
                             <constraint firstItem="f5V-35-NSg" firstAttribute="bottom" secondItem="wan-Ej-yBK" secondAttribute="bottom" id="Sga-OP-FyU"/>
                             <constraint firstItem="f5V-35-NSg" firstAttribute="top" secondItem="wan-Ej-yBK" secondAttribute="top" id="g25-pM-DUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f5V-35-NSg" secondAttribute="trailing" priority="999" constant="20" id="gap-92-ebQ"/>
                             <constraint firstItem="5jx-IG-az6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gpV-VZ-31J"/>
                             <constraint firstItem="WFQ-dn-6Sh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iqG-Um-MBK"/>
                             <constraint firstItem="f5V-35-NSg" firstAttribute="leading" secondItem="wan-Ej-yBK" secondAttribute="trailing" constant="20" id="ixI-0y-XCm"/>
+                            <constraint firstItem="wan-Ej-yBK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WFQ-dn-6Sh" secondAttribute="top" constant="10" id="q4c-is-zTt"/>
                             <constraint firstItem="WFQ-dn-6Sh" firstAttribute="centerX" secondItem="5jx-IG-az6" secondAttribute="centerX" id="uyR-2x-dqz"/>
                             <constraint firstItem="WFQ-dn-6Sh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wXg-o9-F6U"/>
                         </constraints>
