@@ -7,7 +7,7 @@ IOS Test - used Twitter and Google Natural Language APIs
 
 ## Used iOS Architecture Pattern
 **MVVM - Model-View-ViewModel**:
-> #### Distribution
+#### Distribution
 - High distribution of responsibilities among Model, View, ViewModel
-> #### Testability
+#### Testability
 - ViewModel knows nothing about the View. It allows to test easily.
