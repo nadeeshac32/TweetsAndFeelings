@@ -93,15 +93,6 @@ class TwitterTimeLineViewModel: NSObject {
 		}
 	}
 	
-	private func getBearerTokenRequest() {
-		let httpService                     = HTTPService()
-		httpService.postTweeterBearer(onSuccess: { (token) in
-			print("Twitter Bearer Token: \(token.toJSON())")
-		}) { (error) in
-			print("Rest Client Error: \(error)")
-		}
-	}
-	
 	private func getSentimentAnylisisForTweetRequest(analysingString: String, analisedCellIndex: Int) {
 		let httpService                     = HTTPService()
 		httpService.postAnalyseSentiment(analysingString: analysingString, onSuccess: { (googleSentimentAnylise) in
