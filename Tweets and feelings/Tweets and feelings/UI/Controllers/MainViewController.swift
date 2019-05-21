@@ -55,6 +55,7 @@ class MainViewController: ExpandingViewController {
 		addGesture(to: collectionView!)
      	
         self.collectionView?.dataSource = self.twitterTimelinedataSource
+        self.collectionView?.backgroundView?.backgroundColor = .green
     }
     
     

@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wan-Ej-yBK">
-                                <rect key="frame" x="37.5" y="93.5" width="200" height="40"/>
+                                <rect key="frame" x="37.5" y="73.5" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="T0t-cr-hIB"/>
                                     <constraint firstAttribute="height" constant="40" id="VtX-vg-qLF"/>
@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5V-35-NSg">
-                                <rect key="frame" x="257.5" y="93.5" width="70" height="40"/>
+                                <rect key="frame" x="257.5" y="73.5" width="70" height="40"/>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HT7-KG-kxM"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5jx-IG-az6" secondAttribute="bottom" constant="40" id="38w-64-4hC"/>
                             <constraint firstItem="WFQ-dn-6Sh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HGj-Pq-G5F"/>
                             <constraint firstItem="wan-Ej-yBK" firstAttribute="centerX" secondItem="WFQ-dn-6Sh" secondAttribute="centerX" constant="-50" id="Mu7-GI-fyQ"/>
-                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerY" secondItem="WFQ-dn-6Sh" secondAttribute="centerY" priority="999" constant="-220" id="RQ1-JZ-801"/>
+                            <constraint firstItem="wan-Ej-yBK" firstAttribute="centerY" secondItem="WFQ-dn-6Sh" secondAttribute="centerY" priority="999" constant="-240" id="RQ1-JZ-801"/>
                             <constraint firstItem="f5V-35-NSg" firstAttribute="bottom" secondItem="wan-Ej-yBK" secondAttribute="bottom" id="Sga-OP-FyU"/>
                             <constraint firstItem="f5V-35-NSg" firstAttribute="top" secondItem="wan-Ej-yBK" secondAttribute="top" id="g25-pM-DUi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f5V-35-NSg" secondAttribute="trailing" priority="999" constant="20" id="gap-92-ebQ"/>
