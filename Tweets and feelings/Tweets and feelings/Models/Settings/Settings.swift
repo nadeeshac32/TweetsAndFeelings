@@ -32,7 +32,7 @@ class Settings: NSObject {
                                                   defaultValueIndex: 0)
         settingsArray.append(tweetCount!)
         
-        var valuesSampleToggleSetting  : [SettingValue] = []
+        var valuesSampleToggleSetting   : [SettingValue] = []
         valuesSampleToggleSetting.append(SettingValue(index: 0, text: "Desable", value: 0))
         valuesSampleToggleSetting.append(SettingValue(index: 1, text: "Enable", value: 1))
         sampleToggleSetting             = Setting(keyWord: "sampleToggleSetting",
@@ -74,6 +74,7 @@ class Settings: NSObject {
         }
         return settings
     }
+    
 }
 
 

@@ -45,4 +45,5 @@ class SettingDataSource: GenericDataSource<Setting>, UITableViewDataSource, UITa
             return 70
         }
     }
+    
 }

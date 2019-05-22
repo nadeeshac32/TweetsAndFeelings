@@ -16,10 +16,6 @@ class SettingsVC: NCBaseVC {
     
     lazy var viewModel                                  = SettingsViewModel(dataSource: settingDataSource)
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.title                                      = "Settings"
-    }
     override func customiseView() {
         super.customiseView()
         
@@ -34,7 +30,9 @@ class SettingsVC: NCBaseVC {
         tableVw.dataSource                              = settingDataSource
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title                                      = "Settings"
+    }
     
 }

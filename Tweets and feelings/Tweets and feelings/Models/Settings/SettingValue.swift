@@ -9,6 +9,7 @@
 import UIKit
 
 class SettingValue: NSObject {
+    
     let index           : Int!
     let text            : String!
     let value           : Float!
@@ -26,4 +27,5 @@ class SettingValue: NSObject {
             return true
         }
     }
+    
 }

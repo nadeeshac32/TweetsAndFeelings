@@ -13,6 +13,16 @@ IOS Test - used Twitter and Google Natural Language APIs
 - ViewModel knows nothing about the View. It allows to test easily.
 
 
+## Dependancies
+
+Name                          | purpose
+--------------------------    | -----------------------------------------------------
+Alamofire                      | Network library
+AlamofireObjectMapper       | Mapping JSON objects into Swift classes
+Toast-Swift                    | Toast notifications to UIView class
+Expanding-collection             | Animated material design UI card peek/pop controller
+
+
 ### Directory Layout
 ```
 Tweets-And-Feelings
@@ -25,37 +35,54 @@ Tweets-And-Feelings
 │       ├── /Info.plist
 │   ├── /Network/
 │       ├── /API/
-│       	  ├── /GoogleAPIProtocol.swift
-│       	  ├── /TwitterAPIProtocol.swift
+│       	 ├── /GoogleAPIProtocol.swift
+│           ├── /TwitterAPIProtocol.swift
 │       ├── /HTTPService.swift
 │       ├── /RestClientError.swift
 │   ├── /ViewModel/
 │       ├── /DynamicValue.swift
-│      	├── /GenericDataSource.swift
+│       ├── /GenericDataSource.swift
 │       ├── /Twitter/
-│       	  ├── /TweetViewModel.swift
-│       	  ├── /TwitterTimeLineDataSource.swift
-│       	  ├── /TwitterTimeLineViewModel.swift
+│       	 ├── /TweetViewModel.swift
+│       	 ├── /TwitterTimeLineDataSource.swift
+│       	 ├── /TwitterTimeLineViewModel.swift
+│       ├── /Setting/
+│            ├── /SettingViewModel.swift
+│            ├── /SettingsViewModel.swift
+│            ├── /SettingDataSource.swift
 │   ├── /Models/
 │       ├── /GoogleSentiment/
-│       	  ├── /GoogleSentiment.swift
-│       	  ├── /Sentence.swift
-│       	  ├── /Sentiment.swift
-│       	  ├── /Text.swift
+│       	 ├── /GoogleSentiment.swift
+│       	 ├── /Sentence.swift
+│       	 ├── /Sentiment.swift
+│       	 ├── /Text.swift
 │       ├── /Twitter/
-│       	  ├── /Tweet.swift
-│       	  ├── /TweeterUser.swift
-│       	  ├── /TwitterToken.swift
+│       	 ├── /Tweet.swift
+│           ├── /TweeterUser.swift
+│           ├── /TwitterToken.swift
+│       ├── /Settings/
+│           ├── /SettingValue.swift
+│           ├── /Settings.swift
+│           ├── /Settings.swift
 │   ├── /UI/
 │       ├── /StoryBoards/ 
 │           ├── /Main.storyboard
 │           ├── /LaunchScreen.storyboard
-│       ├── /Controllers/ 
+│       ├── /Controllers/
+│           ├── /Base/
+│               ├── /NCBaseVC.swift
 │           ├── /MainViewController.swift
-│       ├── /View/ 
+│           ├── /SettingsVC.swift
+│       ├── /View/
 │           ├── /TweetCollectionViewCell/
-│           	  ├── /TweetCollectionViewCell.swift
-│           	  ├── /TweetCollectionViewCell.xib
+│               ├── /TweetCollectionViewCell.swift
+│               ├── /TweetCollectionViewCell.xib
+│           ├── /SettingWithDropDownTVCell/
+│               ├── /SettingWithDropDownTVCell.swift
+│               ├── /SettingWithDropDownTVCell.xib
+│           ├── /SettingWithSwitchTVCell/
+│               ├── /SettingWithSwitchTVCell.swift
+│               ├── /SettingWithSwitchTVCell.xib
 │   ├── /Utilities/
 │       ├── /Extensions.swift
 │       ├── /Plist.swift
@@ -65,16 +92,6 @@ Tweets-And-Feelings
 │   ├── /HTTPServiceTest.swift
 ├── /.README.md                    
 ```
-
-## Dependancies
-
-Name          	            | purpose
---------------------------	| -----------------------------------------------------
-Alamofire                  	| Network library
-AlamofireObjectMapper       | Mapping JSON objects into Swift classes
-Toast-Swift                	| Toast notifications to UIView class
-Expanding-collection	 	    | Animated material design UI card peek/pop controller
-
 
 
 ## License

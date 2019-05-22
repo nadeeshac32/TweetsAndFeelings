@@ -43,28 +43,8 @@ class NCBaseVC: UIViewController {
     }
     
     func customiseView() {
-        //  addBackButton()
-        //  addEmptyRightButton()
-    }
-    
-    func addBackButton() {
-        var customBackButton                                            : UIButton!
-        customBackButton                                                = CustomeButtons().getButtonWith()
-        customBackButton.addTarget(self, action: #selector(self.backBtnTapped(sender:)), for: UIControl.Event.touchUpInside)
-        let leftButton                                                  = UIBarButtonItem(customView: customBackButton)
-        self.navigationItem.leftBarButtonItem                           = leftButton
-    }
-    
-    @objc func backBtnTapped(sender: UIButton! = nil) {
-        if let _ = self.navigationController?.popViewController(animated: true) {
-            
-        }
-    }
-    
-    func addEmptyRightButton() {
-        let customRightButton                                           = CustomeButtons().getButtonWith(imageName: "")
-        let rightButton                                                 = UIBarButtonItem(customView: customRightButton)
-        self.navigationItem.rightBarButtonItem                          = rightButton
+        // calls from viewDidLoad
+        // keep viewDidLoad clean
     }
     
     func removeNavigationBarShadow() {

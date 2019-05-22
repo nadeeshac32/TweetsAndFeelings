@@ -9,6 +9,7 @@
 import UIKit
 
 struct SettingViewModel {
+    
     var setting: Setting? {
         didSet {
             self.setBasicDetails?(setting?.title ?? "", setting?.desc ?? "", setting?.selectedValue)

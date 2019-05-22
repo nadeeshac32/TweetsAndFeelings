@@ -29,7 +29,6 @@
 		A666938B229500B800397787 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938A229500B800397787 /* Settings.swift */; };
 		A666938D229505F600397787 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938C229505F600397787 /* SettingsVC.swift */; };
 		A66693902295076300397787 /* NCBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938F2295076300397787 /* NCBaseVC.swift */; };
-		A66693932295089300397787 /* CustomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693922295089300397787 /* CustomeButtons.swift */; };
 		A666939722951F0500397787 /* SettingWithSwitchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666939522951F0500397787 /* SettingWithSwitchTVCell.swift */; };
 		A666939822951F0500397787 /* SettingWithSwitchTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666939622951F0500397787 /* SettingWithSwitchTVCell.xib */; };
 		A666939C22951F2600397787 /* SettingWithDropDownTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666939A22951F2600397787 /* SettingWithDropDownTVCell.swift */; };
@@ -104,7 +103,6 @@
 		A666938A229500B800397787 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A666938C229505F600397787 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		A666938F2295076300397787 /* NCBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseVC.swift; sourceTree = "<group>"; };
-		A66693922295089300397787 /* CustomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeButtons.swift; sourceTree = "<group>"; };
 		A666939522951F0500397787 /* SettingWithSwitchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithSwitchTVCell.swift; sourceTree = "<group>"; };
 		A666939622951F0500397787 /* SettingWithSwitchTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingWithSwitchTVCell.xib; sourceTree = "<group>"; };
 		A666939A22951F2600397787 /* SettingWithDropDownTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithDropDownTVCell.swift; sourceTree = "<group>"; };
@@ -203,10 +201,9 @@
 		A61B77CC2290262A00FF7E2D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A68E19552292B0730080730F /* TweeCVCell */,
 				A666939922951F1400397787 /* SettingWithDropDownTVCell */,
 				A666939422951EB500397787 /* SettingWithSwitchTVCell */,
-				A66693912295087F00397787 /* Button */,
-				A68E19552292B0730080730F /* TweeCVCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,9 +240,9 @@
 		A61B77D22290267E00FF7E2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A66693872294FF5B00397787 /* Settings */,
 				A6244F6F2291F82200849FFD /* GoogleSentiment */,
 				A6EB8AD32291A102007CAA5D /* Twitter */,
+				A66693872294FF5B00397787 /* Settings */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,14 +357,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		A66693912295087F00397787 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				A66693922295089300397787 /* CustomeButtons.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
 		A666939422951EB500397787 /* SettingWithSwitchTVCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,10 +397,10 @@
 		A68E195C2292F03F0080730F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A666939E2295212100397787 /* Setting */,
 				A68E195D2292F1540080730F /* DynamicValue.swift */,
 				A68E195F2292F1A40080730F /* GenericDataSource.swift */,
 				A68E19612292F1E20080730F /* Twitter */,
+				A666939E2295212100397787 /* Setting */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -704,7 +693,6 @@
 				A68E19602292F1A40080730F /* GenericDataSource.swift in Sources */,
 				A658654B228E9B6E00D95C90 /* AppDelegate.swift in Sources */,
 				A61B77DD229163D900FF7E2D /* Extensions.swift in Sources */,
-				A66693932295089300397787 /* CustomeButtons.swift in Sources */,
 				A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,7 +873,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelings/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -901,7 +892,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelings/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -918,7 +912,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -936,7 +934,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -953,7 +955,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -970,7 +976,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

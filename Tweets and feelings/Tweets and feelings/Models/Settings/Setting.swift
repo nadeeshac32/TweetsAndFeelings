@@ -9,6 +9,7 @@
 import UIKit
 
 public enum SettingType: String {
+    
     case general    = "General"
     
     func getIconImgName() -> String {
@@ -17,14 +18,18 @@ public enum SettingType: String {
             return "info_icon"
         }
     }
+    
 }
 
 public enum SettingsValueSelectionOption: String {
+    
     case toggle     = "Toggle"
     case dropDown   = "DropDown"
+    
 }
 
 class Setting: NSObject {
+    
     let defaults                    = UserDefaults.standard
     
     var keyWord                     : String!
@@ -88,4 +93,5 @@ class Setting: NSObject {
     func resetSetting() {
         saveSettingValueIndex(index: defaultValueIndex)
     }
+    
 }
