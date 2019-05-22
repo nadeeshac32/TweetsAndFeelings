@@ -25,9 +25,11 @@ class MainViewController: ExpandingViewController {
 		viewModel.expandCell = { [weak self] (doOpen: Bool, indexPath: IndexPath) in
 			guard let cell              = self?.collectionView?.cellForItem(at: indexPath) as? TweetCollectionViewCell else { return }
 			cell.cellIsOpen(doOpen)
+			self?.view.endEditing(true)
 		}
 		viewModel.showToast = { [weak self] (alertString: String) in
 			self?.view.makeToast(alertString)
+			self?.view.endEditing(true)
 		}
 		viewModel.pageNumberUpdate = { [weak self] (pageNumber: String) in
 			self?.pageLabel.text        = pageNumber
@@ -39,6 +41,7 @@ class MainViewController: ExpandingViewController {
         viewModel.reloardDataAccordingToDataSource = { [weak self] in
             self?.collectionView?.reloadData()
             self?.viewModel.viewScrolled(visibleCellIndex: self?.currentIndex ?? 0)
+			self?.view.endEditing(true)
         }
         
 		return viewModel
@@ -66,7 +69,12 @@ class MainViewController: ExpandingViewController {
         self.navigationController?.isNavigationBarHidden                = true
         self.navigationController?.navigationBar.isTranslucent          = true
     }
-    
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		self.view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
+	
 	fileprivate func registerCell() {
 		let nib                         = UINib(nibName: String(describing: TweetCollectionViewCell.self), bundle: nil)
 		collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: TweetCollectionViewCell.self))
