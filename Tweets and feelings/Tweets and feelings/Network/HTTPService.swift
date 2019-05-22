@@ -111,10 +111,10 @@ extension HTTPService: GoogleAPIProtocol {
 		let contextPath                             = "documents:analyzeSentiment?key=\(AppConfig.si.googleAPIKey!)"
 		let parameters : Parameters  		    	= [
 			"document":[
-				"type":"PLAIN_TEXT",
-				"language"	: "EN",
-				"content"	:"\(analysingString)"],
-			"encodingType":"UTF8"
+				"type": "PLAIN_TEXT",
+				"language": "EN",
+				"content": "\(analysingString)"],
+			"encodingType": "UTF8"
 		]
 		
 		genericRequest(method: method!, parameters: parameters, contextPath: contextPath, responseType: GoogleSentiment.self, onError: onError, completionHandler: { (googleSentiment, _) in

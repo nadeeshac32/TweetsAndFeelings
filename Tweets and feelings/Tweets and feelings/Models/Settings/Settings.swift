@@ -43,8 +43,8 @@ class Settings: NSObject {
                                                   values: valuesSampleToggleSetting,
                                                   defaultValueIndex: 0,
                                                   action: { (settingValue) in
-                                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                                    appDelegate.showAlert(title: "You set Boolean value '\(String(describing: settingValue?.getBoolValue() ?? false))' for Sample Toggle Setting")
+                                                		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                                    	appDelegate.showAlert(title: "You set Boolean value '\(String(describing: settingValue?.getBoolValue() ?? false))' for Sample Toggle Setting")
                                                   })
         settingsArray.append(sampleToggleSetting!)
     }
@@ -56,7 +56,7 @@ class Settings: NSObject {
     }
     
     func getSettingTypes() -> [SettingType] {
-        var settingTypes                : [SettingType] = []
+        var settingTypes: [SettingType]	= []
         for setting in settingsArray {
             if !(settingTypes.contains(setting.type)) {
                 settingTypes.append(setting.type)
@@ -66,7 +66,7 @@ class Settings: NSObject {
     }
     
     func getSettingsFor(settingType: SettingType) -> [Setting] {
-        var settings                : [Setting] = []
+        var settings: [Setting] 		= []
         for setting in settingsArray {
             if setting.type == settingType {
                 settings.append(setting)
