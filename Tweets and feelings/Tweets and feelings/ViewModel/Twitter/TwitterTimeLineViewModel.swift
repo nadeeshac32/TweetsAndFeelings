@@ -14,7 +14,7 @@ class TwitterTimeLineViewModel: NSObject {
 
     weak var dataSource                     : GenericDataSource<Tweet>?
 	
-	init(dataSource                         : GenericDataSource<Tweet>?) {
+	init(dataSource: GenericDataSource<Tweet>?) {
         super.init()
 		self.dataSource                     = dataSource
         self.dataSource?.data.addAndNotify(observer: self) {

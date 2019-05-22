@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import expanding_collection
 
-class TwitterTimeLineDataSource : GenericDataSource<Tweet>, UICollectionViewDataSource {
+class TwitterTimeLineDataSource: GenericDataSource<Tweet>, UICollectionViewDataSource {
 	
 	func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
 		return data.value.count

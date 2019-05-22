@@ -11,5 +11,5 @@ import Foundation
 class GenericDataSource<T> : NSObject {
 	var data            : DynamicValue<[T]> = DynamicValue([])
     var cellsIsOpen 	: [Bool]            = [Bool]()
-	var selectedIndex   : IndexPath?
+	var selectedIndex   : IndexPath?    
 }

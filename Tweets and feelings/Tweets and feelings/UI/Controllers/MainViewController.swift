@@ -14,7 +14,8 @@ class MainViewController: ExpandingViewController {
 	
 	@IBOutlet weak var searchTxtFld	    : UITextField!
 	@IBOutlet weak var searchBtn	    : UIButton!
-	@IBOutlet var pageLabel			    : UILabel!
+    @IBOutlet weak var settingBtn       : UIButton!
+    @IBOutlet var pageLabel			    : UILabel!
 	
 	let twitterTimelinedataSource       = TwitterTimeLineDataSource()
 	
@@ -47,7 +48,9 @@ class MainViewController: ExpandingViewController {
 		itemSize                        = CGSize(width: 240, height: 460)
 		super.viewDidLoad()
 		
-		view.addGradientWithColors(color1: #colorLiteral(red: 0.7690889239, green: 0.8050159812, blue: 0.8344388008, alpha: 1), color2: AppConfig.si.colorPrimary!, direction: GradientDirection.topToBottom)
+        view.addGradientWithColors(color1: #colorLiteral(red: 0.7690889239, green: 0.8050159812, blue: 0.8344388008, alpha: 1), color2: AppConfig.si.colorPrimary!, direction: GradientDirection.topToBottom)
+        
+        settingBtn.setImage(UIImage(named: "settingIcon")?.withRenderingMode(.alwaysTemplate), for: .normal)
 		pageLabel.layer.cornerRadius 	= 5
 		searchBtn.layer.cornerRadius 	= 5
 		
@@ -58,6 +61,11 @@ class MainViewController: ExpandingViewController {
         self.collectionView?.backgroundView?.backgroundColor = .green
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title                                                      = ""
+        self.navigationController?.isNavigationBarHidden                = true
+        self.navigationController?.navigationBar.isTranslucent          = true
+    }
     
 	fileprivate func registerCell() {
 		let nib                         = UINib(nibName: String(describing: TweetCollectionViewCell.self), bundle: nil)

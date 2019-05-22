@@ -24,6 +24,19 @@
 		A6586555228E9B7000D95C90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6586553228E9B7000D95C90 /* LaunchScreen.storyboard */; };
 		A6586560228E9B7000D95C90 /* Tweets_and_feelingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658655F228E9B7000D95C90 /* Tweets_and_feelingsTests.swift */; };
 		A658656B228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */; };
+		A66693862294FF3100397787 /* SettingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693852294FF3100397787 /* SettingValue.swift */; };
+		A66693892294FF7D00397787 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693882294FF7D00397787 /* Setting.swift */; };
+		A666938B229500B800397787 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938A229500B800397787 /* Settings.swift */; };
+		A666938D229505F600397787 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938C229505F600397787 /* SettingsVC.swift */; };
+		A66693902295076300397787 /* NCBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666938F2295076300397787 /* NCBaseVC.swift */; };
+		A66693932295089300397787 /* CustomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693922295089300397787 /* CustomeButtons.swift */; };
+		A666939722951F0500397787 /* SettingWithSwitchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666939522951F0500397787 /* SettingWithSwitchTVCell.swift */; };
+		A666939822951F0500397787 /* SettingWithSwitchTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666939622951F0500397787 /* SettingWithSwitchTVCell.xib */; };
+		A666939C22951F2600397787 /* SettingWithDropDownTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666939A22951F2600397787 /* SettingWithDropDownTVCell.swift */; };
+		A666939D22951F2600397787 /* SettingWithDropDownTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666939B22951F2600397787 /* SettingWithDropDownTVCell.xib */; };
+		A66693A02295219D00397787 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666939F2295219D00397787 /* SettingViewModel.swift */; };
+		A66693A2229521B500397787 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693A1229521B500397787 /* SettingsViewModel.swift */; };
+		A66693A4229521C900397787 /* SettingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66693A3229521C900397787 /* SettingDataSource.swift */; };
 		A68E19582292B0A60080730F /* TweetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E19562292B0A60080730F /* TweetCollectionViewCell.swift */; };
 		A68E19592292B0A60080730F /* TweetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68E19572292B0A60080730F /* TweetCollectionViewCell.xib */; };
 		A68E195B2292E3770080730F /* TweeterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E195A2292E3770080730F /* TweeterUser.swift */; };
@@ -86,6 +99,19 @@
 		A6586566228E9B7000D95C90 /* Tweets and feelingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tweets and feelingsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A658656A228E9B7000D95C90 /* Tweets_and_feelingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets_and_feelingsUITests.swift; sourceTree = "<group>"; };
 		A658656C228E9B7000D95C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66693852294FF3100397787 /* SettingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingValue.swift; sourceTree = "<group>"; };
+		A66693882294FF7D00397787 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		A666938A229500B800397787 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A666938C229505F600397787 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		A666938F2295076300397787 /* NCBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCBaseVC.swift; sourceTree = "<group>"; };
+		A66693922295089300397787 /* CustomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeButtons.swift; sourceTree = "<group>"; };
+		A666939522951F0500397787 /* SettingWithSwitchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithSwitchTVCell.swift; sourceTree = "<group>"; };
+		A666939622951F0500397787 /* SettingWithSwitchTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingWithSwitchTVCell.xib; sourceTree = "<group>"; };
+		A666939A22951F2600397787 /* SettingWithDropDownTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWithDropDownTVCell.swift; sourceTree = "<group>"; };
+		A666939B22951F2600397787 /* SettingWithDropDownTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingWithDropDownTVCell.xib; sourceTree = "<group>"; };
+		A666939F2295219D00397787 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		A66693A1229521B500397787 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A66693A3229521C900397787 /* SettingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataSource.swift; sourceTree = "<group>"; };
 		A68E19562292B0A60080730F /* TweetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCollectionViewCell.swift; sourceTree = "<group>"; };
 		A68E19572292B0A60080730F /* TweetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetCollectionViewCell.xib; sourceTree = "<group>"; };
 		A68E195A2292E3770080730F /* TweeterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterUser.swift; sourceTree = "<group>"; };
@@ -177,7 +203,10 @@
 		A61B77CC2290262A00FF7E2D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A68E19552292B0730080730F /* TweetCollectionViewCell */,
+				A666939922951F1400397787 /* SettingWithDropDownTVCell */,
+				A666939422951EB500397787 /* SettingWithSwitchTVCell */,
+				A66693912295087F00397787 /* Button */,
+				A68E19552292B0730080730F /* TweeCVCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,7 +214,9 @@
 		A61B77CD2290263500FF7E2D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A666938E2295073E00397787 /* Base */,
 				A6EB8AD82291B64E007CAA5D /* MainViewController.swift */,
+				A666938C229505F600397787 /* SettingsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +243,7 @@
 		A61B77D22290267E00FF7E2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A66693872294FF5B00397787 /* Settings */,
 				A6244F6F2291F82200849FFD /* GoogleSentiment */,
 				A6EB8AD32291A102007CAA5D /* Twitter */,
 			);
@@ -310,18 +342,73 @@
 			path = "Tweets and feelingsUITests";
 			sourceTree = "<group>";
 		};
-		A68E19552292B0730080730F /* TweetCollectionViewCell */ = {
+		A66693872294FF5B00397787 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A66693852294FF3100397787 /* SettingValue.swift */,
+				A66693882294FF7D00397787 /* Setting.swift */,
+				A666938A229500B800397787 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A666938E2295073E00397787 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A666938F2295076300397787 /* NCBaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A66693912295087F00397787 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				A66693922295089300397787 /* CustomeButtons.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		A666939422951EB500397787 /* SettingWithSwitchTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				A666939522951F0500397787 /* SettingWithSwitchTVCell.swift */,
+				A666939622951F0500397787 /* SettingWithSwitchTVCell.xib */,
+			);
+			path = SettingWithSwitchTVCell;
+			sourceTree = "<group>";
+		};
+		A666939922951F1400397787 /* SettingWithDropDownTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				A666939A22951F2600397787 /* SettingWithDropDownTVCell.swift */,
+				A666939B22951F2600397787 /* SettingWithDropDownTVCell.xib */,
+			);
+			path = SettingWithDropDownTVCell;
+			sourceTree = "<group>";
+		};
+		A666939E2295212100397787 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A666939F2295219D00397787 /* SettingViewModel.swift */,
+				A66693A1229521B500397787 /* SettingsViewModel.swift */,
+				A66693A3229521C900397787 /* SettingDataSource.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A68E19552292B0730080730F /* TweeCVCell */ = {
 			isa = PBXGroup;
 			children = (
 				A68E19562292B0A60080730F /* TweetCollectionViewCell.swift */,
 				A68E19572292B0A60080730F /* TweetCollectionViewCell.xib */,
 			);
-			path = TweetCollectionViewCell;
+			path = TweeCVCell;
 			sourceTree = "<group>";
 		};
 		A68E195C2292F03F0080730F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A666939E2295212100397787 /* Setting */,
 				A68E195D2292F1540080730F /* DynamicValue.swift */,
 				A68E195F2292F1A40080730F /* GenericDataSource.swift */,
 				A68E19612292F1E20080730F /* Twitter */,
@@ -470,11 +557,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A666939822951F0500397787 /* SettingWithSwitchTVCell.xib in Resources */,
 				A6586555228E9B7000D95C90 /* LaunchScreen.storyboard in Resources */,
 				A61B77D92291500800FF7E2D /* Configuration.plist in Resources */,
 				A68E19592292B0A60080730F /* TweetCollectionViewCell.xib in Resources */,
 				A6586552228E9B7000D95C90 /* Assets.xcassets in Resources */,
 				A6586550228E9B6E00D95C90 /* Main.storyboard in Resources */,
+				A666939D22951F2600397787 /* SettingWithDropDownTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +593,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tweets and feelings/Pods-Tweets and feelings-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/expanding-collection/expanding_collection.framework",
@@ -512,6 +602,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/expanding_collection.framework",
@@ -583,18 +674,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68E19652292F34E0080730F /* TwitterTimeLineDataSource.swift in Sources */,
+				A66693A02295219D00397787 /* SettingViewModel.swift in Sources */,
 				A61B77DB2291546C00FF7E2D /* AppConfig.swift in Sources */,
 				A6EB8AD92291B64E007CAA5D /* MainViewController.swift in Sources */,
 				A6244F712291F86B00849FFD /* Sentiment.swift in Sources */,
 				A6EB8AD222919446007CAA5D /* GoogleAPIProtocol.swift in Sources */,
 				A6244F772291F8F700849FFD /* GoogleSentiment.swift in Sources */,
+				A666939722951F0500397787 /* SettingWithSwitchTVCell.swift in Sources */,
 				A61B77D722914F1600FF7E2D /* Plist.swift in Sources */,
 				A6EB8A8C22918018007CAA5D /* RestClientError.swift in Sources */,
 				A68E195E2292F1550080730F /* DynamicValue.swift in Sources */,
+				A666938B229500B800397787 /* Settings.swift in Sources */,
+				A666939C22951F2600397787 /* SettingWithDropDownTVCell.swift in Sources */,
 				A6244F752291F8C100849FFD /* Sentence.swift in Sources */,
+				A66693902295076300397787 /* NCBaseVC.swift in Sources */,
+				A66693A4229521C900397787 /* SettingDataSource.swift in Sources */,
+				A66693A2229521B500397787 /* SettingsViewModel.swift in Sources */,
+				A66693862294FF3100397787 /* SettingValue.swift in Sources */,
 				A68E19582292B0A60080730F /* TweetCollectionViewCell.swift in Sources */,
+				A666938D229505F600397787 /* SettingsVC.swift in Sources */,
 				A6EB8AD72291B256007CAA5D /* TwitterToken.swift in Sources */,
 				A61569B7229364CF008CCC8D /* TweetViewModel.swift in Sources */,
+				A66693892294FF7D00397787 /* Setting.swift in Sources */,
 				A68E195B2292E3770080730F /* TweeterUser.swift in Sources */,
 				A6EB8AD022919435007CAA5D /* TwitterAPIProtocol.swift in Sources */,
 				A6EB8A8E229181FB007CAA5D /* HTTPService.swift in Sources */,
@@ -603,6 +704,7 @@
 				A68E19602292F1A40080730F /* GenericDataSource.swift in Sources */,
 				A658654B228E9B6E00D95C90 /* AppDelegate.swift in Sources */,
 				A61B77DD229163D900FF7E2D /* Extensions.swift in Sources */,
+				A66693932295089300397787 /* CustomeButtons.swift in Sources */,
 				A6EB8AD52291A122007CAA5D /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,10 +885,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelings/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -802,10 +901,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelings/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -822,11 +918,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -844,11 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -865,11 +953,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -886,11 +970,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B546Y3TY2D;
 				INFOPLIST_FILE = "Tweets and feelingsUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nadeeshac32.Tweets-and-feelingsUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

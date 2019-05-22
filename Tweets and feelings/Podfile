@@ -6,10 +6,11 @@ target 'Tweets and feelings' do
   use_frameworks!
 
   # Pods for Tweets and feelings
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper'
   pod 'Toast-Swift', '~> 3.0.1'
   pod 'expanding-collection'
+  pod 'DropDown', '2.3.4'
 
   target 'Tweets and feelingsTests' do
     inherit! :search_paths

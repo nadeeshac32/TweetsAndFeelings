@@ -23,6 +23,10 @@ extension UIView {
         self.layer.shadowRadius                     = 1.0
     }
     
+    func removeShadow() {
+        self.layer.shadowColor                      = UIColor.clear.cgColor
+    }
+    
     func setConstraintsFor(contentView: UIView, left: Bool = true, top: Bool = true, right: Bool = true, bottom: Bool = true) {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(contentView)
@@ -289,3 +293,54 @@ extension Dictionary {
 //    block?(value)
 //    return value
 //}
+
+extension CAGradientLayer {
+    
+    convenience init(frame: CGRect, colors: [UIColor], direction: GradientDirection) {
+        self.init()
+        self.frame = frame
+        self.colors = []
+        for color in colors {
+            self.colors?.append(color.cgColor)
+        }
+        
+        switch direction {
+        case .leftToRight:
+            startPoint              = CGPoint(x: 0.0, y: 0.5)
+            endPoint                = CGPoint(x: 1.0, y: 0.5)
+        case .rightToLeft:
+            startPoint              = CGPoint(x: 1.0, y: 0.5)
+            endPoint                = CGPoint(x: 0.0, y: 0.5)
+        case .bottomToTop:
+            startPoint              = CGPoint(x: 0.5, y: 1.0)
+            endPoint                = CGPoint(x: 0.5, y: 0.0)
+        case .topToBottom:
+            startPoint              = CGPoint(x: 0.5, y: 0.0)
+            endPoint                = CGPoint(x: 0.5, y: 1.0)
+        }
+    }
+    
+    func creatGradientImage() -> UIImage? {
+        
+        var image: UIImage? = nil
+        UIGraphicsBeginImageContext(bounds.size)
+        if let context = UIGraphicsGetCurrentContext() {
+            render(in: context)
+            image = UIGraphicsGetImageFromCurrentImageContext()
+        }
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
+
+extension UINavigationBar {
+    
+    func setGradientBackground(colors: [UIColor] = [ #colorLiteral(red: 0.768627451, green: 0.8039215686, blue: 0.8352941176, alpha: 1), AppConfig.si.colorPrimary!], direction: GradientDirection) {
+        
+        var updatedFrame = bounds
+        updatedFrame.size.height += self.frame.origin.y
+        let gradientLayer = CAGradientLayer(frame: updatedFrame, colors: colors, direction: direction)
+        
+        setBackgroundImage(gradientLayer.creatGradientImage(), for: UIBarMetrics.default)
+    }
+}

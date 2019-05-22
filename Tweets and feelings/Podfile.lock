@@ -3,20 +3,23 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - DropDown (2.3.4)
   - expanding-collection (3.1.0)
   - ObjectMapper (3.4.2)
   - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.7)
   - AlamofireObjectMapper
+  - DropDown (= 2.3.4)
   - expanding-collection
   - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - DropDown
     - expanding-collection
     - ObjectMapper
     - Toast-Swift
@@ -24,10 +27,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 152b3969e93994a82247e8b28358da248c756032
+PODFILE CHECKSUM: 41dfc75067759747c650afdeb3d7ce4cb062af30
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
